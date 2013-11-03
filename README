@@ -1,0 +1,33 @@
+5x h bridges
+    4 input         =   20 input
+                        3x 8-bit shift registers w/ spi interface
+                                5 gpio: miso, mosi, sck, latch, cs
+    1 output        =   5 outputs
+    1 analog        =   5 analog
+        
+spi arm interface   =   spi interface
+                        4 gpio: miso, mosi, sck, cs
+
+conductivity sensor =   1 analog
+
+temp sensing        =   4 analog
+
+range finder        =   ? 
+                        4 gpio
+
+USB interface       =   1 input
+                        1 interupt
+
+-------------------------------------------------------------------------------
+
+3 spi
+2 uart for poolside comms: rx, tx
+1 gpio for usb: +
+1 interupt for usb: -
+2 gpio for h bridge shift registers: latch, cs
+5 gpio for h bridge status
+5 adc for h bridge current draw
+1 gpio for arm interface: cs
+1 adc for water conductivity sensor
+2 adc for heat pipe thermal monitors
+?1 gpio for range finder: cs
