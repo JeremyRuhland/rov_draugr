@@ -14995,6 +14995,9 @@ Ultra-Low Bias Current</description>
 <part name="P+39" library="supply1" deviceset="+5V" device=""/>
 <part name="C45" library="adafruit" deviceset="C-US" device="C1206"/>
 <part name="AGND8" library="supply1" deviceset="AGND" device=""/>
+<part name="R34" library="adafruit" deviceset="R-US_" device="R1206"/>
+<part name="R35" library="adafruit" deviceset="R-US_" device="R1206"/>
+<part name="AGND9" library="supply1" deviceset="AGND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15245,26 +15248,29 @@ Ultra-Low Bias Current</description>
 <instance part="GND85" gate="1" x="269.24" y="88.9"/>
 <instance part="C42" gate="G$1" x="269.24" y="27.94" rot="MR0"/>
 <instance part="GND86" gate="1" x="269.24" y="15.24"/>
-<instance part="R5" gate="G$1" x="12.7" y="233.68" rot="R270"/>
-<instance part="R33" gate="G$1" x="12.7" y="218.44" rot="R270"/>
-<instance part="P+36" gate="1" x="12.7" y="256.54"/>
-<instance part="F4" gate="G$1" x="12.7" y="246.38" rot="R90"/>
-<instance part="AGND2" gate="VR1" x="12.7" y="208.28"/>
+<instance part="R5" gate="G$1" x="0" y="233.68" rot="R270"/>
+<instance part="R33" gate="G$1" x="0" y="218.44" rot="R270"/>
+<instance part="P+36" gate="1" x="0" y="256.54"/>
+<instance part="F4" gate="G$1" x="0" y="246.38" rot="R90"/>
+<instance part="AGND2" gate="VR1" x="0" y="198.12"/>
 <instance part="IC11" gate="G$1" x="-15.24" y="223.52" rot="MR0"/>
 <instance part="P+37" gate="1" x="-12.7" y="256.54"/>
-<instance part="AGND3" gate="VR1" x="-12.7" y="208.28"/>
-<instance part="U$5" gate="G$1" x="27.94" y="213.36" rot="R90"/>
-<instance part="AGND4" gate="VR1" x="27.94" y="208.28"/>
-<instance part="JP11" gate="G$1" x="43.18" y="226.06" rot="R180"/>
-<instance part="AGND5" gate="VR1" x="33.02" y="208.28"/>
-<instance part="C43" gate="G$1" x="7.62" y="220.98"/>
-<instance part="C44" gate="G$1" x="0" y="220.98"/>
-<instance part="AGND6" gate="VR1" x="7.62" y="208.28"/>
-<instance part="AGND7" gate="VR1" x="0" y="208.28"/>
-<instance part="P+38" gate="1" x="0" y="256.54"/>
-<instance part="P+39" gate="1" x="7.62" y="256.54"/>
-<instance part="C45" gate="G$1" x="20.32" y="218.44"/>
-<instance part="AGND8" gate="VR1" x="20.32" y="208.28"/>
+<instance part="AGND3" gate="VR1" x="-12.7" y="198.12"/>
+<instance part="U$5" gate="G$1" x="10.16" y="203.2" rot="R90"/>
+<instance part="AGND4" gate="VR1" x="10.16" y="198.12"/>
+<instance part="JP11" gate="G$1" x="25.4" y="226.06" rot="R180"/>
+<instance part="AGND5" gate="VR1" x="15.24" y="198.12"/>
+<instance part="C43" gate="G$1" x="-17.78" y="246.38"/>
+<instance part="C44" gate="G$1" x="-25.4" y="246.38"/>
+<instance part="AGND6" gate="VR1" x="-17.78" y="236.22"/>
+<instance part="AGND7" gate="VR1" x="-25.4" y="236.22"/>
+<instance part="P+38" gate="1" x="-25.4" y="256.54"/>
+<instance part="P+39" gate="1" x="-17.78" y="256.54"/>
+<instance part="C45" gate="G$1" x="5.08" y="213.36"/>
+<instance part="AGND8" gate="VR1" x="5.08" y="198.12"/>
+<instance part="R34" gate="G$1" x="-20.32" y="213.36"/>
+<instance part="R35" gate="G$1" x="-5.08" y="205.74" rot="R90"/>
+<instance part="AGND9" gate="VR1" x="-5.08" y="198.12"/>
 </instances>
 <busses>
 </busses>
@@ -15946,7 +15952,7 @@ Ultra-Low Bias Current</description>
 <segment>
 <pinref part="F4" gate="G$1" pin="2"/>
 <pinref part="P+36" gate="1" pin="+5V"/>
-<wire x1="12.7" y1="251.46" x2="12.7" y2="254" width="0.1524" layer="91"/>
+<wire x1="0" y1="251.46" x2="0" y2="254" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="IC11" gate="G$1" pin="V+"/>
@@ -15956,12 +15962,12 @@ Ultra-Low Bias Current</description>
 <segment>
 <pinref part="C44" gate="G$1" pin="1"/>
 <pinref part="P+38" gate="1" pin="+5V"/>
-<wire x1="0" y1="254" x2="0" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="-25.4" y1="254" x2="-25.4" y2="248.92" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C43" gate="G$1" pin="1"/>
 <pinref part="P+39" gate="1" pin="+5V"/>
-<wire x1="7.62" y1="254" x2="7.62" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="254" x2="-17.78" y2="248.92" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="ISP-MISO" class="0">
@@ -17315,9 +17321,9 @@ Ultra-Low Bias Current</description>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="101.6" y1="266.7" x2="93.98" y2="266.7" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="266.7" x2="93.98" y2="269.24" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="266.7" x2="63.5" y2="266.7" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="266.7" x2="83.82" y2="266.7" width="0.1524" layer="91"/>
 <junction x="93.98" y="266.7"/>
-<label x="66.04" y="266.7" size="1.778" layer="95"/>
+<label x="86.36" y="266.7" size="1.778" layer="95"/>
 <pinref part="U3" gate="G$1" pin="PC6(/RESET)"/>
 </segment>
 <segment>
@@ -17355,12 +17361,12 @@ Ultra-Low Bias Current</description>
 <segment>
 <pinref part="R33" gate="G$1" pin="2"/>
 <pinref part="AGND2" gate="VR1" pin="AGND"/>
-<wire x1="12.7" y1="210.82" x2="12.7" y2="213.36" width="0.1524" layer="91"/>
+<wire x1="0" y1="200.66" x2="0" y2="213.36" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="IC11" gate="G$1" pin="V-"/>
 <pinref part="AGND3" gate="VR1" pin="AGND"/>
-<wire x1="-12.7" y1="210.82" x2="-12.7" y2="215.9" width="0.1524" layer="91"/>
+<wire x1="-12.7" y1="200.66" x2="-12.7" y2="215.9" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U$5" gate="G$1" pin="1"/>
@@ -17369,23 +17375,27 @@ Ultra-Low Bias Current</description>
 <segment>
 <pinref part="JP11" gate="G$1" pin="2"/>
 <pinref part="AGND5" gate="VR1" pin="AGND"/>
-<wire x1="33.02" y1="210.82" x2="33.02" y2="223.52" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="223.52" x2="35.56" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="200.66" x2="15.24" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="223.52" x2="17.78" y2="223.52" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="AGND7" gate="VR1" pin="AGND"/>
 <pinref part="C44" gate="G$1" pin="2"/>
-<wire x1="0" y1="215.9" x2="0" y2="210.82" width="0.1524" layer="91"/>
+<wire x1="-25.4" y1="241.3" x2="-25.4" y2="238.76" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="AGND6" gate="VR1" pin="AGND"/>
 <pinref part="C43" gate="G$1" pin="2"/>
-<wire x1="7.62" y1="215.9" x2="7.62" y2="210.82" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="241.3" x2="-17.78" y2="238.76" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C45" gate="G$1" pin="2"/>
 <pinref part="AGND8" gate="VR1" pin="AGND"/>
-<wire x1="20.32" y1="210.82" x2="20.32" y2="213.36" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="200.66" x2="5.08" y2="208.28" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R35" gate="G$1" pin="1"/>
+<pinref part="AGND9" gate="VR1" pin="AGND"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -17515,16 +17525,14 @@ Ultra-Low Bias Current</description>
 <label x="152.4" y="248.92" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="IC11" gate="G$1" pin="-IN"/>
-<wire x1="-7.62" y1="220.98" x2="-5.08" y2="220.98" width="0.1524" layer="91"/>
-<wire x1="-5.08" y1="220.98" x2="-5.08" y2="213.36" width="0.1524" layer="91"/>
-<wire x1="-5.08" y1="213.36" x2="-25.4" y2="213.36" width="0.1524" layer="91"/>
-<wire x1="-25.4" y1="213.36" x2="-25.4" y2="223.52" width="0.1524" layer="91"/>
 <pinref part="IC11" gate="G$1" pin="OUT"/>
-<wire x1="-25.4" y1="223.52" x2="-22.86" y2="223.52" width="0.1524" layer="91"/>
-<wire x1="-25.4" y1="223.52" x2="-40.64" y2="223.52" width="0.1524" layer="91"/>
-<junction x="-25.4" y="223.52"/>
+<wire x1="-22.86" y1="223.52" x2="-27.94" y2="223.52" width="0.1524" layer="91"/>
 <label x="-38.1" y="223.52" size="1.778" layer="95"/>
+<pinref part="R34" gate="G$1" pin="1"/>
+<wire x1="-27.94" y1="223.52" x2="-40.64" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="-25.4" y1="213.36" x2="-27.94" y2="213.36" width="0.1524" layer="91"/>
+<wire x1="-27.94" y1="213.36" x2="-27.94" y2="223.52" width="0.1524" layer="91"/>
+<junction x="-27.94" y="223.52"/>
 </segment>
 </net>
 <net name="ARM_EN" class="0">
@@ -17643,28 +17651,40 @@ Ultra-Low Bias Current</description>
 <segment>
 <pinref part="R5" gate="G$1" pin="1"/>
 <pinref part="F4" gate="G$1" pin="1"/>
-<wire x1="12.7" y1="241.3" x2="12.7" y2="238.76" width="0.1524" layer="91"/>
+<wire x1="0" y1="241.3" x2="0" y2="238.76" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$9" class="0">
 <segment>
 <pinref part="R5" gate="G$1" pin="2"/>
 <pinref part="R33" gate="G$1" pin="1"/>
-<wire x1="12.7" y1="223.52" x2="12.7" y2="226.06" width="0.1524" layer="91"/>
+<wire x1="0" y1="223.52" x2="0" y2="226.06" width="0.1524" layer="91"/>
 <pinref part="IC11" gate="G$1" pin="+IN"/>
-<wire x1="12.7" y1="226.06" x2="12.7" y2="228.6" width="0.1524" layer="91"/>
-<wire x1="-7.62" y1="226.06" x2="12.7" y2="226.06" width="0.1524" layer="91"/>
-<junction x="12.7" y="226.06"/>
-<wire x1="12.7" y1="226.06" x2="20.32" y2="226.06" width="0.1524" layer="91"/>
+<wire x1="0" y1="226.06" x2="0" y2="228.6" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="226.06" x2="0" y2="226.06" width="0.1524" layer="91"/>
+<junction x="0" y="226.06"/>
+<wire x1="0" y1="226.06" x2="5.08" y2="226.06" width="0.1524" layer="91"/>
 <pinref part="U$5" gate="G$1" pin="2"/>
-<wire x1="20.32" y1="226.06" x2="27.94" y2="226.06" width="0.1524" layer="91"/>
-<wire x1="27.94" y1="226.06" x2="27.94" y2="218.44" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="226.06" x2="10.16" y2="226.06" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="226.06" x2="10.16" y2="208.28" width="0.1524" layer="91"/>
 <pinref part="JP11" gate="G$1" pin="1"/>
-<wire x1="27.94" y1="226.06" x2="35.56" y2="226.06" width="0.1524" layer="91"/>
-<junction x="27.94" y="226.06"/>
+<wire x1="10.16" y1="226.06" x2="17.78" y2="226.06" width="0.1524" layer="91"/>
+<junction x="10.16" y="226.06"/>
 <pinref part="C45" gate="G$1" pin="1"/>
-<wire x1="20.32" y1="220.98" x2="20.32" y2="226.06" width="0.1524" layer="91"/>
-<junction x="20.32" y="226.06"/>
+<wire x1="5.08" y1="215.9" x2="5.08" y2="226.06" width="0.1524" layer="91"/>
+<junction x="5.08" y="226.06"/>
+</segment>
+</net>
+<net name="N$54" class="0">
+<segment>
+<pinref part="IC11" gate="G$1" pin="-IN"/>
+<wire x1="-7.62" y1="220.98" x2="-5.08" y2="220.98" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="220.98" x2="-5.08" y2="213.36" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="213.36" x2="-15.24" y2="213.36" width="0.1524" layer="91"/>
+<pinref part="R34" gate="G$1" pin="2"/>
+<junction x="-5.08" y="213.36"/>
+<pinref part="R35" gate="G$1" pin="2"/>
+<wire x1="-5.08" y1="210.82" x2="-5.08" y2="213.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
