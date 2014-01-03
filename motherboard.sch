@@ -15231,6 +15231,7 @@ H-Bridge</description>
 <part name="D21" library="adafruit" deviceset="DIODE" device="SMA"/>
 <part name="SW1" library="alcoswitch" deviceset="FSMSM" device="" value=""/>
 <part name="GND117" library="sparkfun" deviceset="GND" device=""/>
+<part name="C43" library="adafruit" deviceset="C-US" device="C1206" value="0.1uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -15368,15 +15369,15 @@ H-Bridge</description>
 <instance part="GND75" gate="1" x="139.7" y="91.44"/>
 <instance part="GND76" gate="1" x="154.94" y="91.44"/>
 <instance part="GND77" gate="1" x="162.56" y="91.44"/>
-<instance part="C34" gate="G$1" x="88.9" y="99.06"/>
+<instance part="C34" gate="G$1" x="86.36" y="99.06"/>
 <instance part="C35" gate="G$1" x="48.26" y="45.72"/>
 <instance part="C36" gate="G$1" x="55.88" y="45.72"/>
 <instance part="P+31" gate="G$1" x="48.26" y="71.12"/>
 <instance part="P+32" gate="G$1" x="55.88" y="71.12"/>
 <instance part="GND78" gate="1" x="48.26" y="2.54"/>
 <instance part="GND79" gate="1" x="55.88" y="2.54"/>
-<instance part="GND80" gate="1" x="88.9" y="91.44"/>
-<instance part="P+33" gate="1" x="88.9" y="134.62"/>
+<instance part="GND80" gate="1" x="86.36" y="91.44"/>
+<instance part="P+33" gate="1" x="86.36" y="134.62"/>
 <instance part="JP8" gate="G$1" x="205.74" y="73.66" rot="R180"/>
 <instance part="JP9" gate="G$1" x="205.74" y="50.8" rot="R180"/>
 <instance part="JP10" gate="G$1" x="205.74" y="27.94" rot="R180"/>
@@ -15407,9 +15408,9 @@ H-Bridge</description>
 <instance part="C51" gate="G$1" x="40.64" y="93.98"/>
 <instance part="P+40" gate="1" x="5.08" y="134.62"/>
 <instance part="P+41" gate="1" x="5.08" y="104.14"/>
-<instance part="C52" gate="G$1" x="81.28" y="99.06"/>
-<instance part="GND13" gate="1" x="81.28" y="91.44"/>
-<instance part="P+42" gate="1" x="81.28" y="134.62"/>
+<instance part="C52" gate="G$1" x="78.74" y="99.06"/>
+<instance part="GND13" gate="1" x="78.74" y="91.44"/>
+<instance part="P+42" gate="1" x="78.74" y="134.62"/>
 <instance part="JP14" gate="G$1" x="327.66" y="231.14" rot="R180"/>
 <instance part="C53" gate="G$1" x="304.8" y="226.06" rot="MR0"/>
 <instance part="GND89" gate="1" x="304.8" y="213.36"/>
@@ -15596,6 +15597,7 @@ H-Bridge</description>
 <instance part="D21" gate="G$1" x="365.76" y="116.84" rot="R90"/>
 <instance part="SW1" gate="G$1" x="86.36" y="226.06"/>
 <instance part="GND117" gate="1" x="86.36" y="215.9"/>
+<instance part="C43" gate="G$1" x="76.2" y="116.84" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -16426,7 +16428,7 @@ H-Bridge</description>
 <segment>
 <pinref part="C34" gate="G$1" pin="1"/>
 <pinref part="P+33" gate="1" pin="+5V"/>
-<wire x1="88.9" y1="132.08" x2="88.9" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="132.08" x2="86.36" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="IC3" gate="A" pin="SCL"/>
@@ -16472,7 +16474,7 @@ H-Bridge</description>
 <segment>
 <pinref part="C52" gate="G$1" pin="1"/>
 <pinref part="P+42" gate="1" pin="+5V"/>
-<wire x1="81.28" y1="132.08" x2="81.28" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="132.08" x2="78.74" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="ISP2" gate="G$1" pin="VCC"/>
@@ -17703,9 +17705,9 @@ H-Bridge</description>
 <label x="93.98" y="144.78" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="IC4" gate="IC" pin="!RTS"/>
-<wire x1="91.44" y1="119.38" x2="71.12" y2="119.38" width="0.1524" layer="91"/>
-<label x="73.66" y="119.38" size="1.778" layer="95"/>
+<pinref part="C43" gate="G$1" pin="1"/>
+<wire x1="73.66" y1="116.84" x2="66.04" y2="116.84" width="0.1524" layer="91"/>
+<label x="68.58" y="116.84" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$44" class="0">
@@ -17794,8 +17796,8 @@ H-Bridge</description>
 </segment>
 <segment>
 <pinref part="IC4" gate="IC" pin="TXD"/>
-<wire x1="91.44" y1="124.46" x2="71.12" y2="124.46" width="0.1524" layer="91"/>
-<label x="73.66" y="124.46" size="1.778" layer="95"/>
+<wire x1="91.44" y1="124.46" x2="66.04" y2="124.46" width="0.1524" layer="91"/>
+<label x="68.58" y="124.46" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="TXD" class="0">
@@ -17806,8 +17808,8 @@ H-Bridge</description>
 </segment>
 <segment>
 <pinref part="IC4" gate="IC" pin="RXD"/>
-<wire x1="91.44" y1="121.92" x2="71.12" y2="121.92" width="0.1524" layer="91"/>
-<label x="73.66" y="121.92" size="1.778" layer="95"/>
+<wire x1="91.44" y1="121.92" x2="66.04" y2="121.92" width="0.1524" layer="91"/>
+<label x="68.58" y="121.92" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$38" class="0">
@@ -18469,6 +18471,15 @@ H-Bridge</description>
 <wire x1="490.22" y1="35.56" x2="490.22" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="D8" gate="G$1" pin="A"/>
 <pinref part="D9" gate="G$1" pin="C"/>
+</segment>
+</net>
+<net name="N$16" class="0">
+<segment>
+<pinref part="IC4" gate="IC" pin="!RTS"/>
+<pinref part="C43" gate="G$1" pin="2"/>
+<wire x1="81.28" y1="116.84" x2="88.9" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="116.84" x2="88.9" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="119.38" x2="91.44" y2="119.38" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
