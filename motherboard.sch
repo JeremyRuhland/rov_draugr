@@ -8,34 +8,34 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
-<layer number="2" name="Route2" color="1" fill="3" visible="yes" active="no"/>
-<layer number="3" name="Route3" color="4" fill="3" visible="yes" active="no"/>
-<layer number="4" name="Route4" color="1" fill="4" visible="yes" active="no"/>
-<layer number="5" name="Route5" color="4" fill="4" visible="yes" active="no"/>
-<layer number="6" name="Route6" color="1" fill="8" visible="yes" active="no"/>
-<layer number="7" name="Route7" color="4" fill="8" visible="yes" active="no"/>
-<layer number="8" name="Route8" color="1" fill="2" visible="yes" active="no"/>
-<layer number="9" name="Route9" color="4" fill="2" visible="yes" active="no"/>
-<layer number="10" name="Route10" color="1" fill="7" visible="yes" active="no"/>
-<layer number="11" name="Route11" color="4" fill="7" visible="yes" active="no"/>
-<layer number="12" name="Route12" color="1" fill="5" visible="yes" active="no"/>
-<layer number="13" name="Route13" color="4" fill="5" visible="yes" active="no"/>
-<layer number="14" name="Route14" color="1" fill="6" visible="yes" active="no"/>
-<layer number="15" name="Route15" color="4" fill="6" visible="yes" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
+<layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
+<layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
+<layer number="6" name="Route6" color="1" fill="8" visible="no" active="no"/>
+<layer number="7" name="Route7" color="4" fill="8" visible="no" active="no"/>
+<layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
+<layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
+<layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
+<layer number="11" name="Route11" color="4" fill="7" visible="no" active="no"/>
+<layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
+<layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -44,8 +44,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -53,17 +53,17 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
-<layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
-<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
-<layer number="56" name="wert" color="7" fill="1" visible="yes" active="no"/>
-<layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
@@ -15105,9 +15105,7 @@ H-Bridge</description>
 <part name="P+44" library="supply1" deviceset="+12V" device=""/>
 <part name="P+45" library="supply1" deviceset="+12V" device=""/>
 <part name="R5" library="adafruit" deviceset="R-US_" device="R1206" value="2k"/>
-<part name="GND23" library="sparkfun" deviceset="GND" device=""/>
 <part name="ZD1" library="dp_devices" deviceset="ZENER" device="SOD-123" value="5V"/>
-<part name="GND24" library="sparkfun" deviceset="GND" device=""/>
 <part name="U$5" library="sparkfun" deviceset="TVS" device=""/>
 <part name="U$10" library="sparkfun" deviceset="TVS" device=""/>
 <part name="U$11" library="sparkfun" deviceset="TVS" device=""/>
@@ -15148,9 +15146,7 @@ H-Bridge</description>
 <part name="C13" library="adafruit" deviceset="C-US" device="C1206" value="4.7uF"/>
 <part name="GND39" library="sparkfun" deviceset="GND" device=""/>
 <part name="R8" library="adafruit" deviceset="R-US_" device="R1206" value="2k"/>
-<part name="GND40" library="sparkfun" deviceset="GND" device=""/>
 <part name="ZD2" library="dp_devices" deviceset="ZENER" device="SOD-123" value="5V"/>
-<part name="GND41" library="sparkfun" deviceset="GND" device=""/>
 <part name="D6" library="adafruit" deviceset="DIODE" device="SMA"/>
 <part name="D7" library="adafruit" deviceset="DIODE" device="SMA"/>
 <part name="D8" library="adafruit" deviceset="DIODE" device="SMA"/>
@@ -15172,9 +15168,7 @@ H-Bridge</description>
 <part name="C17" library="adafruit" deviceset="C-US" device="C1206" value="4.7uF"/>
 <part name="GND48" library="sparkfun" deviceset="GND" device=""/>
 <part name="R10" library="adafruit" deviceset="R-US_" device="R1206" value="2k"/>
-<part name="GND49" library="sparkfun" deviceset="GND" device=""/>
 <part name="ZD3" library="dp_devices" deviceset="ZENER" device="SOD-123" value="5V"/>
-<part name="GND50" library="sparkfun" deviceset="GND" device=""/>
 <part name="D10" library="adafruit" deviceset="DIODE" device="SMA"/>
 <part name="D11" library="adafruit" deviceset="DIODE" device="SMA"/>
 <part name="D12" library="adafruit" deviceset="DIODE" device="SMA"/>
@@ -15196,9 +15190,7 @@ H-Bridge</description>
 <part name="C21" library="adafruit" deviceset="C-US" device="C1206" value="4.7uF"/>
 <part name="GND105" library="sparkfun" deviceset="GND" device=""/>
 <part name="R31" library="adafruit" deviceset="R-US_" device="R1206" value="2k"/>
-<part name="GND106" library="sparkfun" deviceset="GND" device=""/>
 <part name="ZD4" library="dp_devices" deviceset="ZENER" device="SOD-123" value="5V"/>
-<part name="GND107" library="sparkfun" deviceset="GND" device=""/>
 <part name="D14" library="adafruit" deviceset="DIODE" device="SMA"/>
 <part name="D15" library="adafruit" deviceset="DIODE" device="SMA"/>
 <part name="D16" library="adafruit" deviceset="DIODE" device="SMA"/>
@@ -15220,9 +15212,7 @@ H-Bridge</description>
 <part name="C42" library="adafruit" deviceset="C-US" device="C1206" value="4.7uF"/>
 <part name="GND114" library="sparkfun" deviceset="GND" device=""/>
 <part name="R37" library="adafruit" deviceset="R-US_" device="R1206" value="2k"/>
-<part name="GND115" library="sparkfun" deviceset="GND" device=""/>
 <part name="ZD5" library="dp_devices" deviceset="ZENER" device="SOD-123" value="5V"/>
-<part name="GND116" library="sparkfun" deviceset="GND" device=""/>
 <part name="D18" library="adafruit" deviceset="DIODE" device="SMA"/>
 <part name="D19" library="adafruit" deviceset="DIODE" device="SMA"/>
 <part name="D20" library="adafruit" deviceset="DIODE" device="SMA"/>
@@ -15266,6 +15256,16 @@ H-Bridge</description>
 <part name="R9" library="adafruit" deviceset="R-US_" device="R1206" value="70"/>
 <part name="R36" library="adafruit" deviceset="R-US_" device="R1206" value="70"/>
 <part name="R26" library="adafruit" deviceset="R-US_" device="R1206" value="70"/>
+<part name="AGND2" library="supply1" deviceset="AGND" device=""/>
+<part name="AGND3" library="supply1" deviceset="AGND" device=""/>
+<part name="AGND4" library="supply1" deviceset="AGND" device=""/>
+<part name="AGND5" library="supply1" deviceset="AGND" device=""/>
+<part name="AGND6" library="supply1" deviceset="AGND" device=""/>
+<part name="AGND7" library="supply1" deviceset="AGND" device=""/>
+<part name="AGND8" library="supply1" deviceset="AGND" device=""/>
+<part name="AGND18" library="supply1" deviceset="AGND" device=""/>
+<part name="AGND19" library="supply1" deviceset="AGND" device=""/>
+<part name="AGND20" library="supply1" deviceset="AGND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15505,9 +15505,7 @@ H-Bridge</description>
 <instance part="P+44" gate="1" x="332.74" y="208.28"/>
 <instance part="P+45" gate="1" x="294.64" y="208.28"/>
 <instance part="R5" gate="G$1" x="411.48" y="185.42" rot="R270"/>
-<instance part="GND23" gate="1" x="411.48" y="175.26"/>
 <instance part="ZD1" gate="G$1" x="406.4" y="182.88" rot="R90"/>
-<instance part="GND24" gate="1" x="406.4" y="175.26"/>
 <instance part="U$5" gate="G$1" x="165.1" y="167.64" rot="R90"/>
 <instance part="U$10" gate="G$1" x="170.18" y="167.64" rot="R90"/>
 <instance part="U$11" gate="G$1" x="175.26" y="167.64" rot="R90"/>
@@ -15548,9 +15546,7 @@ H-Bridge</description>
 <instance part="C13" gate="G$1" x="424.18" y="99.06" rot="MR0"/>
 <instance part="GND39" gate="1" x="424.18" y="86.36"/>
 <instance part="R8" gate="G$1" x="411.48" y="96.52" rot="R270"/>
-<instance part="GND40" gate="1" x="411.48" y="86.36"/>
 <instance part="ZD2" gate="G$1" x="406.4" y="93.98" rot="R90"/>
-<instance part="GND41" gate="1" x="406.4" y="86.36"/>
 <instance part="D6" gate="G$1" x="495.3" y="147.32" rot="R90"/>
 <instance part="D7" gate="G$1" x="495.3" y="137.16" rot="R90"/>
 <instance part="D8" gate="G$1" x="490.22" y="134.62" rot="R90"/>
@@ -15572,9 +15568,7 @@ H-Bridge</description>
 <instance part="C17" gate="G$1" x="299.72" y="99.06" rot="MR0"/>
 <instance part="GND48" gate="1" x="299.72" y="86.36"/>
 <instance part="R10" gate="G$1" x="287.02" y="96.52" rot="R270"/>
-<instance part="GND49" gate="1" x="287.02" y="86.36"/>
 <instance part="ZD3" gate="G$1" x="281.94" y="93.98" rot="R90"/>
-<instance part="GND50" gate="1" x="281.94" y="86.36"/>
 <instance part="D10" gate="G$1" x="370.84" y="147.32" rot="R90"/>
 <instance part="D11" gate="G$1" x="370.84" y="137.16" rot="R90"/>
 <instance part="D12" gate="G$1" x="365.76" y="134.62" rot="R90"/>
@@ -15596,9 +15590,7 @@ H-Bridge</description>
 <instance part="C21" gate="G$1" x="424.18" y="12.7" rot="MR0"/>
 <instance part="GND105" gate="1" x="424.18" y="0"/>
 <instance part="R31" gate="G$1" x="411.48" y="10.16" rot="R270"/>
-<instance part="GND106" gate="1" x="411.48" y="0"/>
 <instance part="ZD4" gate="G$1" x="406.4" y="7.62" rot="R90"/>
-<instance part="GND107" gate="1" x="406.4" y="0"/>
 <instance part="D14" gate="G$1" x="495.3" y="60.96" rot="R90"/>
 <instance part="D15" gate="G$1" x="495.3" y="50.8" rot="R90"/>
 <instance part="D16" gate="G$1" x="490.22" y="48.26" rot="R90"/>
@@ -15620,9 +15612,7 @@ H-Bridge</description>
 <instance part="C42" gate="G$1" x="299.72" y="12.7" rot="MR0"/>
 <instance part="GND114" gate="1" x="299.72" y="0"/>
 <instance part="R37" gate="G$1" x="287.02" y="10.16" rot="R270"/>
-<instance part="GND115" gate="1" x="287.02" y="0"/>
 <instance part="ZD5" gate="G$1" x="281.94" y="7.62" rot="R90"/>
-<instance part="GND116" gate="1" x="281.94" y="0"/>
 <instance part="D18" gate="G$1" x="370.84" y="60.96" rot="R90"/>
 <instance part="D19" gate="G$1" x="370.84" y="50.8" rot="R90"/>
 <instance part="D20" gate="G$1" x="365.76" y="48.26" rot="R90"/>
@@ -15666,6 +15656,16 @@ H-Bridge</description>
 <instance part="R9" gate="G$1" x="439.42" y="104.14"/>
 <instance part="R36" gate="G$1" x="314.96" y="17.78"/>
 <instance part="R26" gate="G$1" x="439.42" y="17.78"/>
+<instance part="AGND2" gate="VR1" x="406.4" y="175.26"/>
+<instance part="AGND3" gate="VR1" x="411.48" y="175.26"/>
+<instance part="AGND4" gate="VR1" x="411.48" y="86.36"/>
+<instance part="AGND5" gate="VR1" x="406.4" y="86.36"/>
+<instance part="AGND6" gate="VR1" x="281.94" y="86.36"/>
+<instance part="AGND7" gate="VR1" x="287.02" y="86.36"/>
+<instance part="AGND8" gate="VR1" x="281.94" y="0"/>
+<instance part="AGND18" gate="VR1" x="287.02" y="0"/>
+<instance part="AGND19" gate="VR1" x="406.4" y="0"/>
+<instance part="AGND20" gate="VR1" x="411.48" y="0"/>
 </instances>
 <busses>
 </busses>
@@ -16097,16 +16097,6 @@ H-Bridge</description>
 <wire x1="299.72" y1="175.26" x2="299.72" y2="180.34" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R5" gate="G$1" pin="2"/>
-<pinref part="GND23" gate="1" pin="GND"/>
-<wire x1="411.48" y1="180.34" x2="411.48" y2="177.8" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="ZD1" gate="G$1" pin="A"/>
-<wire x1="406.4" y1="180.34" x2="406.4" y2="177.8" width="0.1524" layer="91"/>
-<pinref part="GND24" gate="1" pin="GND"/>
-</segment>
-<segment>
 <pinref part="U$5" gate="G$1" pin="1"/>
 <pinref part="GND25" gate="1" pin="GND"/>
 <wire x1="165.1" y1="162.56" x2="165.1" y2="165.1" width="0.1524" layer="91"/>
@@ -16197,16 +16187,6 @@ H-Bridge</description>
 <wire x1="424.18" y1="88.9" x2="424.18" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R8" gate="G$1" pin="2"/>
-<pinref part="GND40" gate="1" pin="GND"/>
-<wire x1="411.48" y1="91.44" x2="411.48" y2="88.9" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="ZD2" gate="G$1" pin="A"/>
-<wire x1="406.4" y1="91.44" x2="406.4" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="GND41" gate="1" pin="GND"/>
-</segment>
-<segment>
 <pinref part="IC7" gate="G$1" pin="GND"/>
 <wire x1="322.58" y1="91.44" x2="320.04" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="GND42" gate="1" pin="GND"/>
@@ -16254,16 +16234,6 @@ H-Bridge</description>
 <pinref part="C17" gate="G$1" pin="2"/>
 <pinref part="GND48" gate="1" pin="GND"/>
 <wire x1="299.72" y1="88.9" x2="299.72" y2="93.98" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="R10" gate="G$1" pin="2"/>
-<pinref part="GND49" gate="1" pin="GND"/>
-<wire x1="287.02" y1="91.44" x2="287.02" y2="88.9" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="ZD3" gate="G$1" pin="A"/>
-<wire x1="281.94" y1="91.44" x2="281.94" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="GND50" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="IC8" gate="G$1" pin="GND"/>
@@ -16315,16 +16285,6 @@ H-Bridge</description>
 <wire x1="424.18" y1="2.54" x2="424.18" y2="7.62" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R31" gate="G$1" pin="2"/>
-<pinref part="GND106" gate="1" pin="GND"/>
-<wire x1="411.48" y1="5.08" x2="411.48" y2="2.54" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="ZD4" gate="G$1" pin="A"/>
-<wire x1="406.4" y1="5.08" x2="406.4" y2="2.54" width="0.1524" layer="91"/>
-<pinref part="GND107" gate="1" pin="GND"/>
-</segment>
-<segment>
 <pinref part="IC9" gate="G$1" pin="GND"/>
 <wire x1="322.58" y1="5.08" x2="320.04" y2="5.08" width="0.1524" layer="91"/>
 <pinref part="GND108" gate="1" pin="GND"/>
@@ -16372,16 +16332,6 @@ H-Bridge</description>
 <pinref part="C42" gate="G$1" pin="2"/>
 <pinref part="GND114" gate="1" pin="GND"/>
 <wire x1="299.72" y1="2.54" x2="299.72" y2="7.62" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="R37" gate="G$1" pin="2"/>
-<pinref part="GND115" gate="1" pin="GND"/>
-<wire x1="287.02" y1="5.08" x2="287.02" y2="2.54" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="ZD5" gate="G$1" pin="A"/>
-<wire x1="281.94" y1="5.08" x2="281.94" y2="2.54" width="0.1524" layer="91"/>
-<pinref part="GND116" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="C44" gate="G$1" pin="-"/>
@@ -17797,6 +17747,56 @@ H-Bridge</description>
 <pinref part="R35" gate="G$1" pin="1"/>
 <wire x1="279.4" y1="213.36" x2="281.94" y2="213.36" width="0.1524" layer="91"/>
 <wire x1="281.94" y1="213.36" x2="281.94" y2="210.82" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="ZD1" gate="G$1" pin="A"/>
+<wire x1="406.4" y1="180.34" x2="406.4" y2="177.8" width="0.1524" layer="91"/>
+<pinref part="AGND2" gate="VR1" pin="AGND"/>
+</segment>
+<segment>
+<pinref part="R5" gate="G$1" pin="2"/>
+<wire x1="411.48" y1="180.34" x2="411.48" y2="177.8" width="0.1524" layer="91"/>
+<pinref part="AGND3" gate="VR1" pin="AGND"/>
+</segment>
+<segment>
+<pinref part="R8" gate="G$1" pin="2"/>
+<wire x1="411.48" y1="91.44" x2="411.48" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="AGND4" gate="VR1" pin="AGND"/>
+</segment>
+<segment>
+<pinref part="ZD2" gate="G$1" pin="A"/>
+<wire x1="406.4" y1="91.44" x2="406.4" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="AGND5" gate="VR1" pin="AGND"/>
+</segment>
+<segment>
+<pinref part="ZD3" gate="G$1" pin="A"/>
+<wire x1="281.94" y1="91.44" x2="281.94" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="AGND6" gate="VR1" pin="AGND"/>
+</segment>
+<segment>
+<pinref part="R10" gate="G$1" pin="2"/>
+<wire x1="287.02" y1="91.44" x2="287.02" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="AGND7" gate="VR1" pin="AGND"/>
+</segment>
+<segment>
+<pinref part="ZD5" gate="G$1" pin="A"/>
+<wire x1="281.94" y1="5.08" x2="281.94" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="AGND8" gate="VR1" pin="AGND"/>
+</segment>
+<segment>
+<pinref part="R37" gate="G$1" pin="2"/>
+<pinref part="AGND18" gate="VR1" pin="AGND"/>
+<wire x1="287.02" y1="2.54" x2="287.02" y2="5.08" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="ZD4" gate="G$1" pin="A"/>
+<wire x1="406.4" y1="5.08" x2="406.4" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="AGND19" gate="VR1" pin="AGND"/>
+</segment>
+<segment>
+<pinref part="R31" gate="G$1" pin="2"/>
+<wire x1="411.48" y1="5.08" x2="411.48" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="AGND20" gate="VR1" pin="AGND"/>
 </segment>
 </net>
 <net name="N$2" class="0">
