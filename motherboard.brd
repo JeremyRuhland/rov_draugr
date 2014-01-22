@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -4807,7 +4807,7 @@ http://runawaybrainz.blogspot.com</description>
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
-<designrules name="default">
+<designrules>
 <description language="de">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
 &lt;p&gt;
 Die Standard-Design-Rules sind so gewählt, dass sie für 
@@ -5100,7 +5100,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="D4" library="adafruit" package="SOD-123" value="" x="148.59" y="15.24" rot="R180"/>
 <element name="D5" library="adafruit" package="SOD-123" value="" x="143.51" y="15.24" rot="R180"/>
 <element name="SW1" library="alcoswitch" package="FSMSM" value="" x="-37.465" y="46.355"/>
-<element name="U$17" library="CAD Ruler_EagleCad Gridrunner XL Metric V1 (Rupert Hirst 2011)" package="RULER" value="" x="0" y="76.2"/>
+<element name="U$17" library="CAD Ruler_EagleCad Gridrunner XL Metric V1 (Rupert Hirst 2011)" package="RULER" value="" x="0" y="75.8825"/>
 <element name="U$18" library="CAD Ruler_EagleCad Gridrunner XL Metric V1 (Rupert Hirst 2011)" package="RULER" value="" x="0" y="0" rot="R90"/>
 <element name="C43" library="adafruit" package="C1206" value="0.1uF" x="30.48" y="7.62"/>
 <element name="IC6" library="rov_club" package="SO-28" value="VN5772AK" x="92.71" y="22.86" rot="R180"/>
