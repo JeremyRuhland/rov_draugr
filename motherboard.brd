@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.1">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -137,7 +137,6 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="74.6" x2="0" y2="1.27" width="0" layer="20"/>
 <wire x1="0" y1="1.27" x2="1.27" y2="0" width="0" layer="20" curve="90"/>
 <wire x1="1.27" y1="0" x2="175.875" y2="0" width="0" layer="20"/>
 <wire x1="175.875" y1="0" x2="177.145" y2="1.27" width="0" layer="20" curve="90"/>
@@ -145,10 +144,10 @@
 <wire x1="177.145" y1="74.6" x2="175.875" y2="75.87" width="0" layer="20" curve="90"/>
 <wire x1="175.875" y1="75.87" x2="1.27" y2="75.87" width="0" layer="20"/>
 <wire x1="1.27" y1="75.87" x2="0" y2="74.6" width="0" layer="20" curve="90"/>
-<hole x="2.54" y="2.54" drill="3.2"/>
-<hole x="174.625" y="2.54" drill="3.2"/>
-<hole x="2.54" y="73.3425" drill="3.2"/>
-<hole x="174.625" y="73.3425" drill="3.2"/>
+<hole x="3.81" y="3.81" drill="3.2"/>
+<hole x="173.355" y="3.81" drill="3.2"/>
+<hole x="3.81" y="72.0725" drill="3.2"/>
+<hole x="173.355" y="72.0725" drill="3.2"/>
 </plain>
 <libraries>
 <library name="linear">
@@ -4808,7 +4807,7 @@ http://runawaybrainz.blogspot.com</description>
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
-<designrules>
+<designrules name="default">
 <description language="de">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
 &lt;p&gt;
 Die Standard-Design-Rules sind so gewählt, dass sie für 
