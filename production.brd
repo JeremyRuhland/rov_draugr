@@ -1653,6 +1653,8 @@
 <wire x1="0.9525" y1="77.47" x2="0" y2="78.4225" width="0" layer="20"/>
 <wire x1="0.9525" y1="75.8825" x2="0.9525" y2="77.47" width="0" layer="20"/>
 <wire x1="176.2125" y1="75.8825" x2="176.2125" y2="77.47" width="0" layer="20"/>
+<wire x1="1.27" y1="76.67625" x2="175.895" y2="76.67625" width="0.4064" layer="121"/>
+<text x="2.54" y="77.47" size="0.8128" layer="121">Cut w/ 1/16" blade</text>
 </plain>
 <libraries>
 <library name="linear">
