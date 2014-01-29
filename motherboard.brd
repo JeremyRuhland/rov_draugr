@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.0125" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.00125" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -1812,11 +1812,11 @@ design rules under a new name.</description>
 <param name="mdViaViaSameLayer" value="8mil"/>
 <param name="mnLayersViaInSmd" value="2"/>
 <param name="mdCopperDimension" value="10mil"/>
-<param name="mdDrill" value="10mil"/>
+<param name="mdDrill" value="15mil"/>
 <param name="mdSmdStop" value="0mil"/>
 <param name="msWidth" value="6mil"/>
-<param name="msDrill" value="12mil"/>
-<param name="msMicroVia" value="12mil"/>
+<param name="msDrill" value="15mil"/>
+<param name="msMicroVia" value="15mil"/>
 <param name="msBlindViaRatio" value="0.5"/>
 <param name="rvPadTop" value="0.25"/>
 <param name="rvPadInner" value="0.25"/>
@@ -2780,26 +2780,12 @@ design rules under a new name.</description>
 <contactref element="U$8" pad="A"/>
 <contactref element="SW1" pad="A"/>
 <via x="100.965" y="56.515" extent="1-16" drill="0.6"/>
-<via x="100.965" y="55.245" extent="1-16" drill="0.6"/>
 <via x="100.965" y="53.975" extent="1-16" drill="0.6"/>
-<via x="100.965" y="52.705" extent="1-16" drill="0.6"/>
-<via x="100.965" y="51.435" extent="1-16" drill="0.6"/>
 <via x="100.965" y="50.165" extent="1-16" drill="0.6"/>
-<via x="100.965" y="48.895" extent="1-16" drill="0.6"/>
 <via x="100.965" y="47.625" extent="1-16" drill="0.6"/>
-<via x="102.235" y="47.625" extent="1-16" drill="0.6"/>
-<via x="103.505" y="47.625" extent="1-16" drill="0.6"/>
-<via x="104.775" y="47.625" extent="1-16" drill="0.6"/>
-<via x="106.045" y="47.625" extent="1-16" drill="0.6"/>
-<via x="107.315" y="47.625" extent="1-16" drill="0.6"/>
-<via x="108.585" y="47.625" extent="1-16" drill="0.6"/>
 <via x="109.855" y="47.625" extent="1-16" drill="0.6"/>
-<via x="109.855" y="48.895" extent="1-16" drill="0.6"/>
 <via x="109.855" y="50.165" extent="1-16" drill="0.6"/>
-<via x="109.855" y="51.435" extent="1-16" drill="0.6"/>
-<via x="109.855" y="52.705" extent="1-16" drill="0.6"/>
 <via x="109.855" y="53.975" extent="1-16" drill="0.6"/>
-<via x="109.855" y="55.245" extent="1-16" drill="0.6"/>
 <via x="109.855" y="56.515" extent="1-16" drill="0.6"/>
 <via x="108.585" y="56.515" extent="1-16" drill="0.6"/>
 <via x="107.315" y="56.515" extent="1-16" drill="0.6"/>
@@ -2807,42 +2793,24 @@ design rules under a new name.</description>
 <via x="104.775" y="56.515" extent="1-16" drill="0.6"/>
 <via x="103.505" y="56.515" extent="1-16" drill="0.6"/>
 <via x="102.235" y="56.515" extent="1-16" drill="0.6"/>
-<via x="102.235" y="55.245" extent="1-16" drill="0.6"/>
-<via x="103.505" y="55.245" extent="1-16" drill="0.6"/>
-<via x="104.775" y="55.245" extent="1-16" drill="0.6"/>
-<via x="106.045" y="55.245" extent="1-16" drill="0.6"/>
-<via x="107.315" y="55.245" extent="1-16" drill="0.6"/>
-<via x="108.585" y="55.245" extent="1-16" drill="0.6"/>
-<via x="108.585" y="53.975" extent="1-16" drill="0.6"/>
-<via x="108.585" y="52.705" extent="1-16" drill="0.6"/>
-<via x="108.585" y="51.435" extent="1-16" drill="0.6"/>
-<via x="108.585" y="50.165" extent="1-16" drill="0.6"/>
-<via x="108.585" y="48.895" extent="1-16" drill="0.6"/>
-<via x="107.315" y="48.895" extent="1-16" drill="0.6"/>
-<via x="106.045" y="48.895" extent="1-16" drill="0.6"/>
-<via x="104.775" y="48.895" extent="1-16" drill="0.6"/>
-<via x="103.505" y="48.895" extent="1-16" drill="0.6"/>
-<via x="102.235" y="48.895" extent="1-16" drill="0.6"/>
-<via x="102.235" y="50.165" extent="1-16" drill="0.6"/>
-<via x="102.235" y="51.435" extent="1-16" drill="0.6"/>
-<via x="102.235" y="52.705" extent="1-16" drill="0.6"/>
 <via x="102.235" y="53.975" extent="1-16" drill="0.6"/>
 <via x="103.505" y="53.975" extent="1-16" drill="0.6"/>
-<via x="104.775" y="52.705" extent="1-16" drill="0.6"/>
 <via x="104.775" y="53.975" extent="1-16" drill="0.6"/>
-<via x="103.505" y="52.705" extent="1-16" drill="0.6"/>
-<via x="103.505" y="51.435" extent="1-16" drill="0.6"/>
-<via x="103.505" y="50.165" extent="1-16" drill="0.6"/>
-<via x="104.775" y="50.165" extent="1-16" drill="0.6"/>
-<via x="106.045" y="50.165" extent="1-16" drill="0.6"/>
-<via x="107.315" y="50.165" extent="1-16" drill="0.6"/>
-<via x="107.315" y="51.435" extent="1-16" drill="0.6"/>
-<via x="107.315" y="52.705" extent="1-16" drill="0.6"/>
-<via x="107.315" y="53.975" extent="1-16" drill="0.6"/>
 <via x="106.045" y="53.975" extent="1-16" drill="0.6"/>
-<via x="106.045" y="52.705" extent="1-16" drill="0.6"/>
-<via x="106.045" y="51.435" extent="1-16" drill="0.6"/>
-<via x="104.775" y="51.435" extent="1-16" drill="0.6"/>
+<via x="107.315" y="53.975" extent="1-16" drill="0.6"/>
+<via x="108.585" y="53.975" extent="1-16" drill="0.6"/>
+<via x="108.585" y="50.165" extent="1-16" drill="0.6"/>
+<via x="108.585" y="47.625" extent="1-16" drill="0.6"/>
+<via x="102.235" y="47.625" extent="1-16" drill="0.6"/>
+<via x="102.235" y="50.165" extent="1-16" drill="0.6"/>
+<via x="104.775" y="47.625" extent="1-16" drill="0.6"/>
+<via x="104.775" y="50.165" extent="1-16" drill="0.6"/>
+<via x="103.505" y="50.165" extent="1-16" drill="0.6"/>
+<via x="103.505" y="47.625" extent="1-16" drill="0.6"/>
+<via x="107.315" y="47.625" extent="1-16" drill="0.6"/>
+<via x="107.315" y="50.165" extent="1-16" drill="0.6"/>
+<via x="106.045" y="50.165" extent="1-16" drill="0.6"/>
+<via x="106.045" y="47.625" extent="1-16" drill="0.6"/>
 <wire x1="33.972" y1="15.479" x2="33.972" y2="16.193" width="0.3048" layer="1"/>
 <contactref element="IC6" pad="6"/>
 <contactref element="IC6" pad="16"/>
@@ -3118,8 +3086,8 @@ design rules under a new name.</description>
 <wire x1="32.31" y1="36.81" x2="30.7775" y2="36.81" width="0.3048" layer="1"/>
 <wire x1="30.7775" y1="36.81" x2="30.48" y2="36.5125" width="0.3048" layer="1"/>
 <wire x1="30.48" y1="36.5125" x2="30.48" y2="35.56" width="0.3048" layer="1"/>
-<wire x1="32.31" y1="36.81" x2="33.3175" y2="36.81" width="0.3048" layer="1"/>
-<wire x1="33.3175" y1="36.81" x2="33.655" y2="37.1475" width="0.3048" layer="1"/>
+<wire x1="32.31" y1="36.81" x2="33.28575" y2="36.81" width="0.3048" layer="1"/>
+<wire x1="33.28575" y1="36.81" x2="33.62325" y2="37.1475" width="0.3048" layer="1"/>
 <wire x1="27.46" y1="38.66" x2="27.46" y2="40.99" width="0.3048" layer="1"/>
 <wire x1="27.46" y1="40.99" x2="27.175" y2="41.275" width="0.3048" layer="1"/>
 <contactref element="JP11" pad="1"/>
@@ -3147,7 +3115,7 @@ design rules under a new name.</description>
 <vertex x="111.125" y="36.195"/>
 <vertex x="114.6175" y="39.6875"/>
 </polygon>
-<wire x1="33.655" y1="37.1475" x2="33.655" y2="37.465" width="0.3048" layer="1"/>
+<wire x1="33.62325" y1="37.1475" x2="33.655" y2="37.465" width="0.3048" layer="1"/>
 <via x="114.6175" y="13.97" extent="1-16" drill="0.5"/>
 <via x="115.57" y="13.97" extent="1-16" drill="0.5"/>
 <via x="116.5225" y="13.97" extent="1-16" drill="0.5"/>
@@ -3201,23 +3169,11 @@ design rules under a new name.</description>
 <via x="62.865" y="50.4825" extent="1-16" drill="0.5"/>
 <via x="62.865" y="51.435" extent="1-16" drill="0.5"/>
 <via x="63.8175" y="51.435" extent="1-16" drill="0.5"/>
-<wire x1="104.775" y1="51.435" x2="105.0925" y2="51.7525" width="0.3048" layer="1"/>
-<wire x1="105.0925" y1="51.7525" x2="105.7275" y2="51.7525" width="0.3048" layer="1"/>
-<wire x1="105.7275" y1="51.7525" x2="105.41" y2="52.07" width="0.3048" layer="1"/>
+<wire x1="104.775" y1="47.625" x2="105.0925" y2="47.9425" width="0.3048" layer="1"/>
+<wire x1="105.0925" y1="47.9425" x2="105.7275" y2="47.9425" width="0.3048" layer="1"/>
+<wire x1="105.7275" y1="47.9425" x2="105.41" y2="52.07" width="0.3048" layer="1"/>
 <via x="82.8675" y="53.34" extent="1-16" drill="0.5"/>
-<via x="83.82" y="53.34" extent="1-16" drill="0.5"/>
-<via x="82.8675" y="50.4825" extent="1-16" drill="0.5"/>
-<via x="82.8675" y="49.53" extent="1-16" drill="0.5"/>
-<via x="82.8675" y="51.435" extent="1-16" drill="0.5"/>
-<via x="82.8675" y="52.3875" extent="1-16" drill="0.5"/>
-<via x="82.8675" y="48.5775" extent="1-16" drill="0.5"/>
-<via x="83.82" y="52.3875" extent="1-16" drill="0.5"/>
-<via x="83.82" y="51.435" extent="1-16" drill="0.5"/>
-<via x="83.82" y="50.4825" extent="1-16" drill="0.5"/>
-<via x="83.82" y="49.53" extent="1-16" drill="0.5"/>
-<via x="83.82" y="48.5775" extent="1-16" drill="0.5"/>
-<via x="83.82" y="47.625" extent="1-16" drill="0.5"/>
-<via x="82.8675" y="47.625" extent="1-16" drill="0.5"/>
+<via x="84.1375" y="53.34" extent="1-16" drill="0.5"/>
 <via x="81.915" y="47.625" extent="1-16" drill="0.5"/>
 <via x="80.9625" y="47.625" extent="1-16" drill="0.5"/>
 <via x="80.01" y="47.625" extent="1-16" drill="0.5"/>
@@ -3272,6 +3228,38 @@ design rules under a new name.</description>
 <via x="167.3225" y="60.96" extent="1-16" drill="0.5"/>
 <via x="166.37" y="60.96" extent="1-16" drill="0.5"/>
 <via x="165.4175" y="60.96" extent="1-16" drill="0.5"/>
+<via x="85.4075" y="53.34" extent="1-16" drill="0.5"/>
+<via x="85.4075" y="52.07" extent="1-16" drill="0.5"/>
+<via x="85.4075" y="50.8" extent="1-16" drill="0.5"/>
+<via x="85.4075" y="49.53" extent="1-16" drill="0.5"/>
+<via x="85.4075" y="48.26" extent="1-16" drill="0.5"/>
+<via x="85.4075" y="46.99" extent="1-16" drill="0.5"/>
+<via x="85.4075" y="54.61" extent="1-16" drill="0.5"/>
+<via x="86.6775" y="53.34" extent="1-16" drill="0.5"/>
+<via x="86.6775" y="52.07" extent="1-16" drill="0.5"/>
+<via x="86.6775" y="50.8" extent="1-16" drill="0.5"/>
+<via x="87.9475" y="50.8" extent="1-16" drill="0.5"/>
+<via x="89.2175" y="50.8" extent="1-16" drill="0.5"/>
+<via x="90.4875" y="50.8" extent="1-16" drill="0.5"/>
+<via x="87.9475" y="52.07" extent="1-16" drill="0.5"/>
+<via x="87.9475" y="53.34" extent="1-16" drill="0.5"/>
+<via x="89.2175" y="53.34" extent="1-16" drill="0.5"/>
+<via x="90.4875" y="53.34" extent="1-16" drill="0.5"/>
+<via x="89.2175" y="52.07" extent="1-16" drill="0.5"/>
+<via x="90.4875" y="52.07" extent="1-16" drill="0.5"/>
+<via x="91.7575" y="52.07" extent="1-16" drill="0.5"/>
+<via x="93.0275" y="52.07" extent="1-16" drill="0.5"/>
+<via x="94.2975" y="52.07" extent="1-16" drill="0.5"/>
+<via x="84.1375" y="52.07" extent="1-16" drill="0.5"/>
+<via x="82.8675" y="52.07" extent="1-16" drill="0.5"/>
+<via x="82.8675" y="50.8" extent="1-16" drill="0.5"/>
+<via x="82.8675" y="49.53" extent="1-16" drill="0.5"/>
+<via x="82.8675" y="48.26" extent="1-16" drill="0.5"/>
+<via x="82.8675" y="46.99" extent="1-16" drill="0.5"/>
+<via x="84.1375" y="46.99" extent="1-16" drill="0.5"/>
+<via x="84.1375" y="48.26" extent="1-16" drill="0.5"/>
+<via x="84.1375" y="49.53" extent="1-16" drill="0.5"/>
+<via x="84.1375" y="50.8" extent="1-16" drill="0.5"/>
 </signal>
 <signal name="+5V">
 <contactref element="IC1" pad="4"/>
