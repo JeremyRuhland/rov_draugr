@@ -1,3 +1,3 @@
-extern void initUart(void);
+extern void uartInit(void);
 extern uint8_t uartRx(void);
-extern void uartTx(uint8_t byte);
+extern void uartTxByte(uint8_t byte);

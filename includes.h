@@ -4,6 +4,7 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
+#include <avr/interrupt.h>
 
 #include "spi.h"
 #include "uart.h"
@@ -13,6 +14,10 @@
 #define BACKWARD 0x03
 #define ON       0x01
 #define OFF      0x00
+
+#define UART_FOSC 16000000
+#define UART_BAUD 9600
+#define UART_BAUD_CODE (UART_FOSC/(16/(UART_BAUD-1)))
 
 typedef struct {
     uint8_t motor0  : 2;
