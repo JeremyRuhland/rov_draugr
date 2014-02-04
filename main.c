@@ -12,6 +12,7 @@ void initGpio(void);
 
 volatile uint8_t ReceivedCommand;
 volatile ShiftRegister16Bit ShiftOut;
+volatile uint16_t AnalogValues[8];
 
 int main(void) {
     initGpio();
