@@ -13,7 +13,7 @@ void uartInit(void) {
 uint8_t uartRx(void) {
     uint8_t byte;
 
-    if (UCSR0A & (1<<RXC0)) { // data waiting
+    if (UCSR0A & (1<<RXC0)) { // Check for data waiting
         byte = UDR0;
     } else {
         byte = 0x00;
@@ -23,7 +23,15 @@ uint8_t uartRx(void) {
 }
 
 void uartTxByte(uint8_t byte) {
-    if (/* condition for byte send */) {
+    if (UCSR0A & (1<<RDRE0)) { // If buffer empty
         UDR0 = byte;
     } else {}
+}
+
+void uartTxWord(uint16_t word) {
+    while(!(UCSR0A & (1<<TXC0))) {} // Wail for buffer & Tx empty
+
+    // Write lower & upper byte
+    uartTxByte((uint8_t) word);
+    uartTxByte((uint8_t) (word>>8));
 }
