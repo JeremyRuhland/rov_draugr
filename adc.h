@@ -1,3 +1,5 @@
+extern uint16_t AnalogValues;
+
 extern void adcInit(void);
 extern uint16_t adcFormatTemp(uint16_t value);
 

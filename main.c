@@ -20,6 +20,8 @@ int main(void) {
     initSpi();
     initAdc();
 
+    sei();
+
     for(;;) {
         getCommand();
 	    runCommand();
