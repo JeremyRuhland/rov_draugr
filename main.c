@@ -61,16 +61,6 @@ void runCommand(void) {
             // Motor 0, forward
             case '!' :
                 #ifdef MOTOR0_REVERSE
-                ShiftOut.motor0 = FORWARD;
-                #else
-                ShiftOut.motor0 = BACKWARDS;
-                #endif
-                updateShift();
-                break;
-
-            // Motor 0, backward
-            case '"' :
-                #ifdef MOTOR0_REVERSE
                 ShiftOut.motor0 = BACKWARDS;
                 #else
                 ShiftOut.motor0 = FORWARDS;
@@ -78,88 +68,145 @@ void runCommand(void) {
                 updateShift();
                 break;
 
+            // Motor 0, backward
+            case '"' :
+                #ifdef MOTOR0_REVERSE
+                ShiftOut.motor0 = FORWARDS;
+                #else
+                ShiftOut.motor0 = BACKWARDS;
+                #endif
+                updateShift();
+                break;
+
             // Motor 1, stop
             case '#' :
-
+                ShiftOut.motor1 = OFF;
                 break;
 
             // Motor 1, forward
             case '$' :
-
+                #ifdef MOTOR1_REVERSE
+                ShiftOut.motor1 = BACKWARDS;
+                #else
+                ShiftOut.motor1 = FORWARDS;
+                #endif
+                updateShift();
                 break;
 
             // Motor 1, backward
             case '%' :
-
+                #ifdef MOTOR1_REVERSE
+                ShiftOut.motor1 = FORWARDS;
+                #else
+                ShiftOut.motor1 = BACKWARDS;
+                #endif
+                updateShift();
                 break;
 
             // Motor 2, stop
             case '&' :
-
+                ShiftOut.motor2 = OFF;
                 break;
 
             // Motor 2, forward
             case '\'' :
-
+                #ifdef MOTOR2_REVERSE
+                ShiftOut.motor2 = BACKWARDS;
+                #else
+                ShiftOut.motor2 = FORWARDS;
+                #endif
+                updateShift();
                 break;
 
             // Motor 2, backward
             case '(':
-
+                #ifdef MOTOR2_REVERSE
+                ShiftOut.motor2 = FORWARDS;
+                #else
+                ShiftOut.motor2 = BACKWARDS;
+                #endif
+                updateShift();
                 break;
 
             // Motor 3, stop
             case ')' :
-
+                ShiftOut.motor3 = OFF;
                 break;
 
             // Motor 3, forward
             case '*' :
-
+                #ifdef MOTOR3_REVERSE
+                ShiftOut.motor3 = BACKWARDS;
+                #else
+                ShiftOut.motor3 = FORWARDS;
+                #endif
+                updateShift();
                 break;
 
             // Motor 3, backward
             case '+' :
-
+                #ifdef MOTOR3_REVERSE
+                ShiftOut.motor3 = FORWARDS;
+                #else
+                ShiftOut.motor3 = BACKWARDS;
+                #endif
+                updateShift();
                 break;
 
-            // Motor 5, stop
+            // Motor 4, stop
             case ',' :
-
+                ShiftOut.motor4 = OFF;
                 break;
 
-            // Motor 5, forward
+            // Motor 4, forward
             case '-' :
-
+                #ifdef MOTOR4_REVERSE
+                ShiftOut.motor4 = BACKWARDS;
+                #else
+                ShiftOut.motor4 = FORWARDS;
+                #endif
+                updateShift();
                 break;
 
-            // Motor 5, backward
+            // Motor 4, backward
             case '.' :
-
+                #ifdef MOTOR4_REVERSE
+                ShiftOut.motor4 = FORWARDS;
+                #else
+                ShiftOut.motor4 = BACKWARDS;
+                #endif
+                updateShift();
                 break;
 
             // All motors stop
             case '/' :
-
+                ShiftOut.motor0 = OFF;
+                ShiftOut.motor1 = OFF;
+                ShiftOut.motor2 = OFF;
+                ShiftOut.motor3 = OFF;
+                ShiftOut.motor4 = OFF;
+                
+                updateShift();
                 break;
 
+            // 
             // Get all motor status
-            case '0' :
+            case '' :
 
                 break;
 
             // Get all temps
-            case '1' :
+            case '' :
 
                 break;
 
             // Get water conductivity measurement
-            case '2' :
+            case '' :
 
                 break;
 
-            // Get sonar distance measuremnt
-            case '3' :
+            // Get sonar distance measurement
+            case '' :
 
                 break;
 
@@ -176,7 +223,7 @@ void updateShift(void) {
 ISR(ADC_vect) {
     static uint8_t adcMux = 0;
 
-    if (adcMux <= 4) { // Motor 0-4
+    if (adcMux <= 3) { // Motor 0-4
         AnalogValues[adcMux] = adcResult();
 
         adcMux++;
@@ -185,26 +232,30 @@ ISR(ADC_vect) {
 
         // Start new conversion
         ADCSRA |= (1<<ADSC);
-    } else if (adcMux == 5) { // Skip EN1
-        adcMux++;
+    } else if (adcMux == 4) { // Skip EN1
+        AnalogValues[adcMux] = adcResult();
+    
+        adcMux += 2;
 
+        ADMUX = ((ADMUX & ~(0x0F)) | adcMux); // Switch to next mux
+        
         // Start new conversion
         ADCSRA |= (1<<ADSC);
     } else if (adcMux <= 7) { // Temp 0-1
-        AnalogValues[adcMux+1] = adcResult();
+        AnalogValues[adcMux-1] = adcResult();
 
         adcMux++;
 
-        ADMUX = ((ADMUX & ~(0x0F)) | (adcMux+1)); // Switch to next mux
+        ADMUX = ((ADMUX & ~(0x0F)) | adcMux); // Switch to next mux
 
         // Start new conversion
         ADCSRA |= (1<<ADSC);
     } else { // Internal Temp
-        AnalogValues[adcMux+1] = adcResult();
+        AnalogValues[adcMux-1] = adcResult();
 
         adcMux = 0; // Reset cycle
 
-        ADMUX = ((ADMUX & ~(0x0F)) | (adcMux+1)); // Switch to next mux
+        ADMUX = ((ADMUX & ~(0x0F)) | adcMux); // Switch to next mux
 
         // Start new conversion
         ADCSRA |= (1<<ADSC);
