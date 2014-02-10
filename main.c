@@ -10,6 +10,7 @@
 
 void initGpio(void);
 void runCommand(void);
+void updateShift(void);
 
 volatile uint8_t ReceivedCommand;
 volatile ShiftRegister16Bit ShiftOut;
@@ -24,7 +25,6 @@ int main(void) {
     sei();
 
     for(;;) {
-        while (!(ReceivedCommand)) {} // Wait until command received
 	    runCommand();
     }
 }
@@ -42,44 +42,124 @@ void initGpio(void) {
 }
 
 void runCommand(void) {
-    // Case tree for received commands
-    switch (ReceivedCommand) {
-        case 0x01 :
+    static uint8_t oldCommand = 0x00;
 
-            break;
+    if (oldCommand != ReceivedCommand) {
+        cli(); // Disable interrupt
 
-        case 0x02 :
+        oldCommand = ReceivedCommand;
+        ReceivedCommand = 0x00; // Reset received command to null
 
-            break;
+        // Case tree for received commands
+        switch (oldCommand) {
+            // Motor 1, stop
+            case 0x01 :
 
-        case 0x03 :
+                break;
 
-            break;
+            // Motor 1, forward
+            case 0x02 :
 
-        case 0x04 :
+                break;
 
-            break;
+            // Motor 1, backward
+            case 0x03 :
 
-        case 0x05 :
+                break;
 
-            break;
+            // Motor 2, stop
+            case 0x04 :
 
-        case 0x06 :
+                break;
 
-            break;
+            // Motor 2, forward
+            case 0x05 :
 
-        case 0x08 :
+                break;
 
-            break;
+            // Motor 2, backward
+            case 0x06 :
 
-        case 0x09 :
+                break;
 
-            break;
+            // Motor 3, stop
+            case 0x08 :
 
-        default:
+                break;
+
+            // Motor 3, forward
+            case 0x09 :
+
+                break;
+
+            // Motor 3, backward
+            case 0x0A:
+
+                break;
+
+            // Motor 4, stop
+            case 0x0B :
+
+                break;
+
+            // Motor 4, forward
+            case 0x0C :
+
+                break;
+
+            // Motor 4, backward
+            case 0x0D :
+
+                break;
+
+            // Motor 5, stop
+            case 0x0E :
+
+                break;
+
+            // Motor 5, forward
+            case 0x0F :
+
+                break;
+
+            // Motor 5, backward
+            case 0x10 :
+
+                break;
+
+            // All motors stop
+            case 0x11 :
+
+                break;
+
+            // Get all motor status
+            case 0x12 :
+
+                break;
+
+            // Get all temps
+            case 0x13 :
+
+                break;
+
+            // Get water conductivity measurement
+            case 0x14 :
+
+                break;
+
+            // Get sonar distance measuremnt
+            case 0x15 :
+
+                break;
+
+            default:
+        }
+
+        sei(); // Reenable interrupts
     }
+}
 
-    ReceivedCommand = 0x00; // Reset received command to null
+void updateShift(void) {
 }
 
 ISR(ADC_vect) {
