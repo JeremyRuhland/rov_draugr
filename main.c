@@ -52,103 +52,114 @@ void runCommand(void) {
 
         // Case tree for received commands
         switch (oldCommand) {
+            // Motor 0, stop
+            case ' ' :
+                ShiftOut.motor0 = OFF;
+                updateShift();
+                break;
+
+            // Motor 0, forward
+            case '!' :
+                #ifdef MOTOR0_REVERSE
+                ShiftOut.motor0 = FORWARD;
+                #else
+                ShiftOut.motor0 = BACKWARDS;
+                #endif
+                updateShift();
+                break;
+
+            // Motor 0, backward
+            case '"' :
+                #ifdef MOTOR0_REVERSE
+                ShiftOut.motor0 = BACKWARDS;
+                #else
+                ShiftOut.motor0 = FORWARDS;
+                #endif
+                updateShift();
+                break;
+
             // Motor 1, stop
-            case 0x01 :
+            case '#' :
 
                 break;
 
             // Motor 1, forward
-            case 0x02 :
+            case '$' :
 
                 break;
 
             // Motor 1, backward
-            case 0x03 :
+            case '%' :
 
                 break;
 
             // Motor 2, stop
-            case 0x04 :
+            case '&' :
 
                 break;
 
             // Motor 2, forward
-            case 0x05 :
+            case '\'' :
 
                 break;
 
             // Motor 2, backward
-            case 0x06 :
+            case '(':
 
                 break;
 
             // Motor 3, stop
-            case 0x08 :
+            case ')' :
 
                 break;
 
             // Motor 3, forward
-            case 0x09 :
+            case '*' :
 
                 break;
 
             // Motor 3, backward
-            case 0x0A:
-
-                break;
-
-            // Motor 4, stop
-            case 0x0B :
-
-                break;
-
-            // Motor 4, forward
-            case 0x0C :
-
-                break;
-
-            // Motor 4, backward
-            case 0x0D :
+            case '+' :
 
                 break;
 
             // Motor 5, stop
-            case 0x0E :
+            case ',' :
 
                 break;
 
             // Motor 5, forward
-            case 0x0F :
+            case '-' :
 
                 break;
 
             // Motor 5, backward
-            case 0x10 :
+            case '.' :
 
                 break;
 
             // All motors stop
-            case 0x11 :
+            case '/' :
 
                 break;
 
             // Get all motor status
-            case 0x12 :
+            case '0' :
 
                 break;
 
             // Get all temps
-            case 0x13 :
+            case '1' :
 
                 break;
 
             // Get water conductivity measurement
-            case 0x14 :
+            case '2' :
 
                 break;
 
             // Get sonar distance measuremnt
-            case 0x15 :
+            case '3' :
 
                 break;
 
