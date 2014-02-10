@@ -31,7 +31,7 @@ void uartTxByte(uint8_t byte) {
 void uartTxWord(uint16_t word) {
     while(!(UCSR0A & (1<<TXC0))) {} // Wail for buffer & Tx empty
 
-    // Write lower & upper byte
-    uartTxByte((uint8_t) word);
+    // Write upper & lower byte
     uartTxByte((uint8_t) (word>>8));
+    uartTxByte((uint8_t) word);
 }
