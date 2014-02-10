@@ -45,8 +45,6 @@ void runCommand(void) {
     static uint8_t oldCommand = 0x00;
 
     if (oldCommand != ReceivedCommand) {
-        cli(); // Disable interrupt
-
         oldCommand = ReceivedCommand;
         ReceivedCommand = 0x00; // Reset received command to null
 
@@ -189,7 +187,60 @@ void runCommand(void) {
                 updateShift();
                 break;
 
-            // 
+            // Toggle SW 0
+            case '' :
+                ShiftOut.switch0 = !(ShiftOut.switch0);
+
+                updateShift();
+                break;
+
+            // Toggle SW 1
+            case '' :
+                ShiftOut.switch1 = !(ShiftOut.switch1);
+
+                updateShift();
+                break;
+
+            // Toggle SW 2
+            case '' :
+                ShiftOut.switch2 = !(ShiftOut.switch2);
+
+                updateShift();
+                break;
+
+            // Toggle SW 3
+            case '' :
+                ShiftOut.switch3 = !(ShiftOut.switch3);
+
+                updateShift();
+                break;
+
+            // Toggle SW 4
+            case '' :
+                ShiftOut.switch4 = !(ShiftOut.switch4);
+
+                updateShift();
+                break;
+
+            // Toggle SW 5
+            case '' :
+                ShiftOut.switch5 = !(ShiftOut.switch5);
+
+                updateShift();
+                break;
+
+            // All switches off
+            case '' :
+                ShiftOut.switch0 = OFF;
+                ShiftOut.switch1 = OFF;
+                ShiftOut.switch2 = OFF;
+                ShiftOut.switch3 = OFF;
+                ShiftOut.switch4 = OFF;
+                ShiftOut.switch5 = OFF;
+
+                updateShift();
+                break;
+
             // Get all motor status
             case '' :
 
@@ -212,12 +263,11 @@ void runCommand(void) {
 
             default:
         }
-
-        sei(); // Reenable interrupts
     }
 }
 
 void updateShift(void) {
+    
 }
 
 ISR(ADC_vect) {
