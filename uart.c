@@ -23,7 +23,7 @@ uint8_t uartRx(void) {
 }
 
 void uartTxByte(uint8_t byte) {
-    if (UCSR0A & (1<<RDRE0)) { // If buffer empty
+    if (UCSR0A & (1<<UDRE0)) { // If buffer empty
         UDR0 = byte;
     } else {}
 }
