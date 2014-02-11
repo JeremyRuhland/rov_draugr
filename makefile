@@ -1,14 +1,14 @@
 # AVR-GCC Makefile
 #---Prefs---
 PROJECT=ROV_waterside
-MMCU=atmega168
+MMCU=atmega328
 F_CPU=16000000 # 16 MHz
 FUSEBITS=0x62
 #-----------
 
 
 
-SOURCES=$(wildcard *.c)
+SOURCES=main.c adc.c spi.c uart.c
 CC=avr-gcc
 OBJCOPY=avr-objcopy
 
