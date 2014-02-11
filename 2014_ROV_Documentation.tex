@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{fullpage}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+
+\definecolor{lightgray}{gray}{0.9}
+
+%\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{}
+%
+%\begin{figure}[!h]
+%\begin{center}
+%\caption{}
+%\end{center}
+%\end{figure}
+%
+%\rowcolors{1}{}{lightgray}
+%\begin{tabular}{c|cc}
+% &
+% &
+% \\
+%\hline
+% & & \\
+% & & \\
+%\end{tabular}
+
+
+\title{Western Washington University Marine Technology Club\\2014 ROV Control System Documentation}
+\author{Jeremy Ruhland}
+\date{\today}
+\begin{document}
+
+\maketitle
+\null
+\pagebreak
+\vspace*{\fill}
+\hfill
+\begin{center}
+This page intentionally left blank.
+\end{center}
+\pagebreak
+
+\section*{Serial Communication Protocol}
+The control system uses an FTDI USB-to-TTL serial conversion chip. The host PC sends and reads commands from a virtual serial port that is automatically created upon connection to the ROV by the FTDI firmware.
+
+Accepted commands and their behavior are described in figure \ref{fig:commandlisting}. Unlisted commands have no effect on the system.
+
+\begin{figure}[!h]
+\begin{center}
+\rowcolors{1}{}{lightgray}
+\begin{tabular}{l|l|ll}
+\textbf{Command} &
+\textbf{Tx Value} &
+\textbf{Rx Datatype} &
+\textbf{Rx Description}\\
+\hline
+\textbf{Motor 0} Stop & ' ' (0x20) & Unsigned 16-bit & ACK (0x01) \\ 
+Forward & '!' (0x21) & Unsigned 16-bit & ACK (0x01) \\ 
+Backward & '"' (0x22) & Unsigned 16-bit & ACK (0x01) \\ 
+\hline
+\textbf{Motor 1} Stop & '\#' (0x23) & Unsigned 16-bit & ACK (0x01) \\ 
+Forward & '\$' (0x24) & Unsigned 16-bit & ACK (0x01) \\ 
+Backward & '\%' (0x25) & Unsigned 16-bit & ACK (0x01) \\ 
+\hline
+\textbf{Motor 2} Stop & '\&' (0x26) & Unsigned 16-bit & ACK (0x01) \\ 
+Forward & '\'' (0x27) & Unsigned 16-bit & ACK (0x01) \\ 
+Backward & '(' (0x28) & Unsigned 16-bit & ACK (0x01) \\ 
+\hline
+\textbf{Motor 3} Stop & ')' (0x29) & Unsigned 16-bit & ACK (0x01) \\ 
+Forward & '*' (0x2A) & Unsigned 16-bit & ACK (0x01) \\ 
+Backward & '+' (0x2B) & Unsigned 16-bit & ACK (0x01) \\ 
+\hline
+\textbf{Motor 4} Stop & ' \`' (0x2C) & Unsigned 16-bit & ACK (0x01) \\ 
+Forward & '-' (0x2D) & Unsigned 16-bit & ACK (0x01) \\ 
+Backward & '.' (0x2E) & Unsigned 16-bit & ACK (0x01) \\ 
+\hline
+All Motors Stop & '/' (0x2F) & Unsigned 16-bit & ACK (0x01) \\ 
+\hline
+Toggle SW 0 & '0' (0x30) & Unsigned 16-bit & ACK (0x01) \\ 
+Toggle SW 1 & '1' (0x31) & Unsigned 16-bit & ACK (0x01) \\ 
+Toggle SW 2 & '2' (0x32) & Unsigned 16-bit & ACK (0x01) \\ 
+Toggle SW 3 & '3' (0x33) & Unsigned 16-bit & ACK (0x01) \\ 
+Toggle SW 4 & '4' (0x34) & Unsigned 16-bit & ACK (0x01) \\ 
+Toggle SW 5 & '5' (0x35) & Unsigned 16-bit & ACK (0x01) \\ 
+\hline
+All Switches Off & '6' (0x36) & Unsigned 16-bit & ACK (0x01) \\ 
+\hline
+% Get Motor Status & '7' (0x37) & Unsigned 16-bit & \\ 
+Get All Temps & '8' (0x38) & 3x Signed 16-bit & Heat pipes 1-2 \& internal ($^\circ C$)\\ 
+Get All Motor Currents & '9' (0x39) & 5x Signed 16-bit & Motor 0-5 current ($mA$)\\ 
+%Get Water Conductivity & ':' (0x) & Unsigned 16-bit & \\ 
+%Get Sonar Distance & ';' (0x) & Unsigned 16-bit & \\ 
+%Get Compass Heading & '<' (0x) & Unsigned 16-bit & \\ 
+
+% Keeping for later & '' (0x) & Unsigned 16-bit & ACK (0x01) \\ 
+\end{tabular}
+\caption{System commands and behavior}
+\label{fig:commandlisting}
+\end{center}
+\end{figure}
+\end{document}
