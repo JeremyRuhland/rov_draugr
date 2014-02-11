@@ -30,6 +30,8 @@
 #define BACKWARD 0x03
 #define ON       0x01
 #define OFF      0x00
+#define TRUE     0x01
+#define FALSE    0x00
 
 #ifdef BITFIELD_ORDER_REVERSE
 typedef struct {

@@ -5,7 +5,7 @@ void uartInit(void) {
     UBRR0H = (uint8_t) (UART_BAUD_CODE>>8);
     UBRR0L = (uint8_t) (UART_BAUD_CODE);
 
-    UCSR0B = ((1<<RXCIE0) | (1<<RXEN0) | (1<<TXEN0)); // Enable rx interrupt, tx/rx
+    UCSR0B = ((1<<RXEN0) | (1<<TXEN0)); // Enable tx/rx
 
     UCSR0C = ((1<<UCSZ01) | (1<<UCSZ00)); // 8-bit mode
 }

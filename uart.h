@@ -5,7 +5,7 @@
 *                                                                             *
 *                                                                             *
 * (void) uartInit(void)         Function initializes the UART system into     *
-*                               8-bit, 1 stop bit, no parity.                 *
+*                               8-bit, 1 stop bit, no parity mode.            *
 * (uint8_t) uartRx(void)        Function returns byte waiting in the UART Rx  *
 *                               register, returns null (0x00) if empty.       *
 * (void) uartTxByte(uint8_t)    Function transmits byte if UART Tx register   *
