@@ -31,6 +31,7 @@ void spiPeripheralSelect(uint8_t peripheral) {
             PORTB &= ~(1<<PB1);
             break;
         default:
+            break;
     }
 }
 
