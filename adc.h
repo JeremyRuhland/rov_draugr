@@ -8,10 +8,10 @@
 *                                          interrupt on conversion completion *
 *                                          Function must be called before     *
 *                                          following functions may be called. *
-* (uint16_t) adcFormatVoltage(uint16_t)    Macro define to convert raw ADC    *
+* (uint16_t) adcFormatVoltage(uint16_t)    Function to convert raw ADC        *
 *                                          byte value to unsigned 16-bit      *
 *                                          millivolts.                        *
-* (int16_t) adcFormatTemp(uint16_t)        Macro define to convert raw Adc    *
+* (int16_t) adcFormatTemp(uint16_t)        Function to convert raw Adc        *
 *                                          byte value to signed 16-bit        *
 *                                          centigrade.                        *
 * (uint16_t) adcResult(void)               Macro define to accumulate high    *
@@ -21,7 +21,7 @@
 ******************************************************************************/
 
 extern void adcInit(void);
+extern uint16_t adcFormatVoltage(uint16_t v);
+extern int16_t adcFormatTemp(uint16_t t);
 
-#define adcFormatVoltage(x) (uint16_t) ((uint16_t) x*50)/1024)*100)
-#define adcFormatTemp(x) (int16_t) (((int16_t) (adcFormatVoltage(x))-500)/10)
 #define adcResult() ((uint16_t) ((((uint16_t) ADCH)<<8) | ((uint16_t) ADCL)))
