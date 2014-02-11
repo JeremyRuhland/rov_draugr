@@ -20,9 +20,9 @@ volatile uint16_t AnalogValues[8];
 
 int main(void) {
     initGpio();
-    initUart();
-    initSpi();
-    initAdc();
+    uartInit();
+    spiInit();
+    adcInit();
 
     sei();
 
@@ -55,243 +55,243 @@ void runCommand(void) {
         switch (oldCommand) {
             // Motor 0, stop
             case ' ' :
-                ShiftOut.motor0 = OFF;
+                ShiftOut.bit.motor0 = OFF;
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Motor 0, forward
             case '!' :
-                #ifdef MOTOR0_REVERSE
-                ShiftOut.motor0 = BACKWARDS;
-                #else
-                ShiftOut.motor0 = FORWARDS;
-                #endif
+              #ifdef MOTOR0_REVERSE
+                ShiftOut.bit.motor0 = BACKWARD;
+              #else
+                ShiftOut.bit.motor0 = FORWARD;
+              #endif
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Motor 0, backward
             case '"' :
-                #ifdef MOTOR0_REVERSE
-                ShiftOut.motor0 = FORWARDS;
-                #else
-                ShiftOut.motor0 = BACKWARDS;
-                #endif
+              #ifdef MOTOR0_REVERSE
+                ShiftOut.bit.motor0 = FORWARD;
+              #else
+                ShiftOut.bit.motor0 = BACKWARD;
+              #endif
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Motor 1, stop
             case '#' :
-                ShiftOut.motor1 = OFF;
+                ShiftOut.bit.motor1 = OFF;
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Motor 1, forward
             case '$' :
-                #ifdef MOTOR1_REVERSE
-                ShiftOut.motor1 = BACKWARDS;
-                #else
-                ShiftOut.motor1 = FORWARDS;
-                #endif
+              #ifdef MOTOR1_REVERSE
+                ShiftOut.bit.motor1 = BACKWARD;
+              #else
+                ShiftOut.bit.motor1 = FORWARD;
+              #endif
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Motor 1, backward
             case '%' :
-                #ifdef MOTOR1_REVERSE
-                ShiftOut.motor1 = FORWARDS;
-                #else
-                ShiftOut.motor1 = BACKWARDS;
-                #endif
+              #ifdef MOTOR1_REVERSE
+                ShiftOut.bit.motor1 = FORWARD;
+              #else
+                ShiftOut.bit.motor1 = BACKWARD;
+              #endif
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Motor 2, stop
             case '&' :
-                ShiftOut.motor2 = OFF;
+                ShiftOut.bit.motor2 = OFF;
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Motor 2, forward
             case '\'' :
-                #ifdef MOTOR2_REVERSE
-                ShiftOut.motor2 = BACKWARDS;
-                #else
-                ShiftOut.motor2 = FORWARDS;
-                #endif
+              #ifdef MOTOR2_REVERSE
+                ShiftOut.bit.motor2 = BACKWARD;
+              #else
+                ShiftOut.bit.motor2 = FORWARD;
+              #endif
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Motor 2, backward
             case '(':
-                #ifdef MOTOR2_REVERSE
-                ShiftOut.motor2 = FORWARDS;
-                #else
-                ShiftOut.motor2 = BACKWARDS;
-                #endif
+              #ifdef MOTOR2_REVERSE
+                ShiftOut.bit.motor2 = FORWARD;
+              #else
+                ShiftOut.bit.motor2 = BACKWARD;
+              #endif
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Motor 3, stop
             case ')' :
-                ShiftOut.motor3 = OFF;
+                ShiftOut.bit.motor3 = OFF;
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Motor 3, forward
             case '*' :
-                #ifdef MOTOR3_REVERSE
-                ShiftOut.motor3 = BACKWARDS;
-                #else
-                ShiftOut.motor3 = FORWARDS;
-                #endif
+              #ifdef MOTOR3_REVERSE
+                ShiftOut.bit.motor3 = BACKWARD;
+              #else
+                ShiftOut.bit.motor3 = FORWARD;
+              #endif
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Motor 3, backward
             case '+' :
-                #ifdef MOTOR3_REVERSE
-                ShiftOut.motor3 = FORWARDS;
-                #else
-                ShiftOut.motor3 = BACKWARDS;
-                #endif
+              #ifdef MOTOR3_REVERSE
+                ShiftOut.bit.motor3 = FORWARD;
+              #else
+                ShiftOut.bit.motor3 = BACKWARD;
+              #endif
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Motor 4, stop
             case ',' :
-                ShiftOut.motor4 = OFF;
+                ShiftOut.bit.motor4 = OFF;
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Motor 4, forward
             case '-' :
-                #ifdef MOTOR4_REVERSE
-                ShiftOut.motor4 = BACKWARDS;
-                #else
-                ShiftOut.motor4 = FORWARDS;
-                #endif
+              #ifdef MOTOR4_REVERSE
+                ShiftOut.bit.motor4 = BACKWARD;
+              #else
+                ShiftOut.bit.motor4 = FORWARD;
+              #endif
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Motor 4, backward
             case '.' :
-                #ifdef MOTOR4_REVERSE
-                ShiftOut.motor4 = FORWARDS;
-                #else
-                ShiftOut.motor4 = BACKWARDS;
-                #endif
+              #ifdef MOTOR4_REVERSE
+                ShiftOut.bit.motor4 = FORWARD;
+              #else
+                ShiftOut.bit.motor4 = BACKWARD;
+              #endif
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // All motors stop
             case '/' :
-                ShiftOut.motor0 = OFF;
-                ShiftOut.motor1 = OFF;
-                ShiftOut.motor2 = OFF;
-                ShiftOut.motor3 = OFF;
-                ShiftOut.motor4 = OFF;
+                ShiftOut.bit.motor0 = OFF;
+                ShiftOut.bit.motor1 = OFF;
+                ShiftOut.bit.motor2 = OFF;
+                ShiftOut.bit.motor3 = OFF;
+                ShiftOut.bit.motor4 = OFF;
                 
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Toggle SW 0
             case '0' :
-                ShiftOut.switch0 = !(ShiftOut.switch0);
+                ShiftOut.bit.switch0 = !(ShiftOut.bit.switch0);
 
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Toggle SW 1
             case '1' :
-                ShiftOut.switch1 = !(ShiftOut.switch1);
+                ShiftOut.bit.switch1 = !(ShiftOut.bit.switch1);
 
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Toggle SW 2
             case '2' :
-                ShiftOut.switch2 = !(ShiftOut.switch2);
+                ShiftOut.bit.switch2 = !(ShiftOut.bit.switch2);
 
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Toggle SW 3
             case '3' :
-                ShiftOut.switch3 = !(ShiftOut.switch3);
+                ShiftOut.bit.switch3 = !(ShiftOut.bit.switch3);
 
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Toggle SW 4
             case '4' :
-                ShiftOut.switch4 = !(ShiftOut.switch4);
+                ShiftOut.bit.switch4 = !(ShiftOut.bit.switch4);
 
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Toggle SW 5
             case '5' :
-                ShiftOut.switch5 = !(ShiftOut.switch5);
+                ShiftOut.bit.switch5 = !(ShiftOut.bit.switch5);
 
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // All switches off
             case '6' :
-                ShiftOut.switch0 = OFF;
-                ShiftOut.switch1 = OFF;
-                ShiftOut.switch2 = OFF;
-                ShiftOut.switch3 = OFF;
-                ShiftOut.switch4 = OFF;
-                ShiftOut.switch5 = OFF;
+                ShiftOut.bit.switch0 = OFF;
+                ShiftOut.bit.switch1 = OFF;
+                ShiftOut.bit.switch2 = OFF;
+                ShiftOut.bit.switch3 = OFF;
+                ShiftOut.bit.switch4 = OFF;
+                ShiftOut.bit.switch5 = OFF;
 
                 updateShift();
 
-                uartTx(TRUE); // ACK after command
+                uartTxWord((uint16_t) TRUE); // ACK after command
                 break;
 
             // Get all motor status
@@ -325,34 +325,45 @@ void runCommand(void) {
                 break;
 
             default:
+                break;
         }
     }
 }
 
 void sendTemps(void) {
-    int8_t temps[3];
+    int16_t temps[3];
     uint8_t i;
 
     cli(); // Disable interrupts
 
+    // Convert analog values to temp array
     for (i = 5; i <= 7; i++) {
-        temp[i-5] = (int8_t) adcFormatTemp(AnalogValues[i]);
+        temps[i-5] = adcFormatTemp(AnalogValues[i]);
     }
 
+    // Send temp array
     for (i = 0; i <= 3; i++) {
-        
+        uartTxWord(temps[i]);
     }
 
     sei(); // Reenable interrupts
 }
 
 void sendCurrents(void) {
-    uint8_t temps[5];
+    int16_t currents[5];
     uint8_t i;
 
     cli(); // Disable interrupts
 
-    
+    // Convert analog values to currents array
+    for (i = 0; i <= 4; i++) {
+        currents[i] = adcFormatVoltage(AnalogValues[i]);
+    }
+
+    // Send currents array
+    for (i = 0; i <= 4; i++) {
+        uartTxWord(currents[i]);
+    }
 
     sei(); // Reenable interrupts
 }
@@ -363,8 +374,8 @@ void updateShift(void) {
     spiPeripheralSelect(0); // Disable all peripherals
 
     // Transmit new shift register data
-    (void) spiByte((uint8_t) ShiftOut);
-    (void) spiByte((uint8_t) (ShiftOut>>8));
+    (void) spiByte((uint8_t) ShiftOut.uart);
+    (void) spiByte((uint8_t) (ShiftOut.uart>>8));
 
     _delay_us(0.025); // Delay 25nS for setup time of shift register
 

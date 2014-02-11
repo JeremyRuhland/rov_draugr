@@ -46,7 +46,7 @@ typedef struct {
     uint8_t switch3 : 1;
     uint8_t switch4 : 1;
     uint8_t switch5 : 1;
-} ShiftRegister16Bit;
+} bitfield;
 #else
 typedef struct {
     uint8_t switch5 : 1;
@@ -60,5 +60,11 @@ typedef struct {
     uint8_t motor2  : 2;
     uint8_t motor1  : 2;
     uint8_t motor0  : 2;
-} ShiftRegister16Bit;
+} bitfield;
 #endif
+
+typedef union ShiftRegister16Bit {
+    uint16_t uart;
+    bitfield bit;
+} ShiftRegister16Bit;
+
