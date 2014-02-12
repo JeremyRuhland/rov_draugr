@@ -8,17 +8,21 @@
 
 #include "includes.h"
 
+// Function prototypes
 void initGpio(void);
 void runCommand(void);
 void updateShift(void);
 void sendTemps(void);
 void sendCurrents(void);
+void sendMotorStatus(void);
 
-volatile uint8_t ReceivedCommand;
-volatile ShiftRegister16Bit ShiftOut;
-volatile uint16_t AnalogValues[8];
+// Global variables
+volatile uint8_t ReceivedCommand; // Buffer for received command
+volatile ShiftRegister16Bit ShiftOut; // Buffer for shift register
+volatile uint16_t AnalogValues[8]; // Buffer for ADC results
 
 int main(void) {
+    // Initialize all functions
     initGpio();
     uartInit();
     spiInit();
@@ -26,14 +30,15 @@ int main(void) {
 
     sei();
 
+    // Main control loop
     for(;;) {
-        ReceivedCommand = uartRx();
-	    runCommand();
+        ReceivedCommand = uartRx(); // Check buffer for waiting command
+	    runCommand(); // Parse and run command
     }
 }
 
 void initGpio(void) {
-    // Set all chip select lines high to disable on startup
+    // Set all chip select lines high to disable peripherals on startup
     PORTD |= (1<<PD7);
     DDRD |= ((1<<PD1) | (1<<PD7));
 
@@ -47,18 +52,19 @@ void initGpio(void) {
 void runCommand(void) {
     static uint8_t oldCommand = 0x00;
 
+    // Only run if new command has been received
     if (oldCommand != ReceivedCommand) {
         oldCommand = ReceivedCommand;
         ReceivedCommand = 0x00; // Reset received command to null
 
-        // Case tree for received commands
+        // Parse and execute received commands
         switch (oldCommand) {
             // Motor 0, stop
             case ' ' :
                 ShiftOut.bit.motor0 = OFF;
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // Motor 0, forward
@@ -70,7 +76,7 @@ void runCommand(void) {
               #endif
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // Motor 0, backward
@@ -82,7 +88,7 @@ void runCommand(void) {
               #endif
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // Motor 1, stop
@@ -90,7 +96,7 @@ void runCommand(void) {
                 ShiftOut.bit.motor1 = OFF;
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // Motor 1, forward
@@ -102,7 +108,7 @@ void runCommand(void) {
               #endif
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // Motor 1, backward
@@ -114,7 +120,7 @@ void runCommand(void) {
               #endif
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // Motor 2, stop
@@ -122,7 +128,7 @@ void runCommand(void) {
                 ShiftOut.bit.motor2 = OFF;
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // Motor 2, forward
@@ -134,7 +140,7 @@ void runCommand(void) {
               #endif
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // Motor 2, backward
@@ -146,7 +152,7 @@ void runCommand(void) {
               #endif
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // Motor 3, stop
@@ -154,7 +160,7 @@ void runCommand(void) {
                 ShiftOut.bit.motor3 = OFF;
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // Motor 3, forward
@@ -166,7 +172,7 @@ void runCommand(void) {
               #endif
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // Motor 3, backward
@@ -178,7 +184,7 @@ void runCommand(void) {
               #endif
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // Motor 4, stop
@@ -186,7 +192,7 @@ void runCommand(void) {
                 ShiftOut.bit.motor4 = OFF;
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // Motor 4, forward
@@ -198,7 +204,7 @@ void runCommand(void) {
               #endif
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // Motor 4, backward
@@ -210,7 +216,7 @@ void runCommand(void) {
               #endif
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // All motors stop
@@ -223,7 +229,7 @@ void runCommand(void) {
                 
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // Toggle SW 0
@@ -232,7 +238,10 @@ void runCommand(void) {
 
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                if (ShiftOut.bit.switch0) {
+                    uartTxWord((uint16_t) 0x06); // ACK if on
+                } else {
+                    uartTxWord((uint16_t) 0x15); // NAK if off
                 break;
 
             // Toggle SW 1
@@ -241,7 +250,9 @@ void runCommand(void) {
 
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                    uartTxWord((uint16_t) 0x06); // ACK if on
+                } else {
+                    uartTxWord((uint16_t) 0x15); // NAK if off
                 break;
 
             // Toggle SW 2
@@ -250,7 +261,10 @@ void runCommand(void) {
 
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                if (ShiftOut.bit.switch0) {
+                    uartTxWord((uint16_t) 0x06); // ACK if on
+                } else {
+                    uartTxWord((uint16_t) 0x15); // NAK if off
                 break;
 
             // Toggle SW 3
@@ -259,7 +273,10 @@ void runCommand(void) {
 
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                if (ShiftOut.bit.switch0) {
+                    uartTxWord((uint16_t) 0x06); // ACK if on
+                } else {
+                    uartTxWord((uint16_t) 0x15); // NAK if off
                 break;
 
             // Toggle SW 4
@@ -268,7 +285,10 @@ void runCommand(void) {
 
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                if (ShiftOut.bit.switch0) {
+                    uartTxWord((uint16_t) 0x06); // ACK if on
+                } else {
+                    uartTxWord((uint16_t) 0x15); // NAK if off
                 break;
 
             // Toggle SW 5
@@ -277,7 +297,10 @@ void runCommand(void) {
 
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                if (ShiftOut.bit.switch0) {
+                    uartTxWord((uint16_t) 0x06); // ACK if on
+                } else {
+                    uartTxWord((uint16_t) 0x15); // NAK if off
                 break;
 
             // All switches off
@@ -291,12 +314,12 @@ void runCommand(void) {
 
                 updateShift();
 
-                uartTxWord((uint16_t) TRUE); // ACK after command
+                uartTxWord((uint16_t) 0x06); // ACK after command
                 break;
 
             // Get all motor status
             case '7' :
-                //((PORTD & 0x7C)>>2)
+                sendMotorStatus();
                 break;
 
             // Get all temps
@@ -330,30 +353,23 @@ void runCommand(void) {
     }
 }
 
+void sendMotorStatus(void) {
+}
+
 void sendTemps(void) {
-    int16_t temps[3];
+    int16_t temp;
     uint8_t i;
 
-    cli(); // Disable interrupts
-
-    // Convert analog values to temp array
-    for (i = 5; i <= 7; i++) {
-        temps[i-5] = adcFormatTemp(AnalogValues[i]);
-    }
-
-    // Send temp array
+    // Convert analog values and send
     for (i = 0; i <= 3; i++) {
-        uartTxWord(temps[i]);
+        temp = adcFormatTemp(AnalogValues[i+5]);
+        uartTxWord(temp);
     }
-
-    sei(); // Reenable interrupts
 }
 
 void sendCurrents(void) {
-    int16_t currents[5];
+    uint16_t currents[5];
     uint8_t i;
-
-    cli(); // Disable interrupts
 
     // Convert analog values to currents array
     for (i = 0; i <= 4; i++) {
@@ -364,13 +380,9 @@ void sendCurrents(void) {
     for (i = 0; i <= 4; i++) {
         uartTxWord(currents[i]);
     }
-
-    sei(); // Reenable interrupts
 }
 
 void updateShift(void) {
-    cli(); // Disable interrupts
-
     spiPeripheralSelect(0); // Disable all peripherals
 
     // Transmit new shift register data
@@ -383,8 +395,6 @@ void updateShift(void) {
     PORTB |= (1<<PB2);
     _delay_us(0.025); // Delay 25nS for setup time of shift register
     PORTB &= ~(1<<PB2);
-
-    sei(); // Reenable interrupts
 }
 
 ISR(ADC_vect) {
