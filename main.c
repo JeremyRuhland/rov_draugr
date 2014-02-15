@@ -33,7 +33,7 @@ int main(void) {
     // Main control loop
     for(;;) {
         ReceivedCommand = uartRx(); // Check buffer for waiting command
-	    runCommand(); // Parse and run command
+        runCommand(); // Parse and run command
     }
 }
 
@@ -242,6 +242,7 @@ void runCommand(void) {
                     uartTxWord((uint16_t) 0x06); // ACK if on
                 } else {
                     uartTxWord((uint16_t) 0x15); // NAK if off
+                }
                 break;
 
             // Toggle SW 1
@@ -250,9 +251,11 @@ void runCommand(void) {
 
                 updateShift();
 
+                if (ShiftOut.bit.switch1) {
                     uartTxWord((uint16_t) 0x06); // ACK if on
                 } else {
                     uartTxWord((uint16_t) 0x15); // NAK if off
+                }
                 break;
 
             // Toggle SW 2
@@ -261,10 +264,11 @@ void runCommand(void) {
 
                 updateShift();
 
-                if (ShiftOut.bit.switch0) {
+                if (ShiftOut.bit.switch2) {
                     uartTxWord((uint16_t) 0x06); // ACK if on
                 } else {
                     uartTxWord((uint16_t) 0x15); // NAK if off
+                }
                 break;
 
             // Toggle SW 3
@@ -273,10 +277,11 @@ void runCommand(void) {
 
                 updateShift();
 
-                if (ShiftOut.bit.switch0) {
+                if (ShiftOut.bit.switch3) {
                     uartTxWord((uint16_t) 0x06); // ACK if on
                 } else {
                     uartTxWord((uint16_t) 0x15); // NAK if off
+                }
                 break;
 
             // Toggle SW 4
@@ -285,10 +290,11 @@ void runCommand(void) {
 
                 updateShift();
 
-                if (ShiftOut.bit.switch0) {
+                if (ShiftOut.bit.switch4) {
                     uartTxWord((uint16_t) 0x06); // ACK if on
                 } else {
                     uartTxWord((uint16_t) 0x15); // NAK if off
+                }
                 break;
 
             // Toggle SW 5
@@ -297,10 +303,11 @@ void runCommand(void) {
 
                 updateShift();
 
-                if (ShiftOut.bit.switch0) {
+                if (ShiftOut.bit.switch5) {
                     uartTxWord((uint16_t) 0x06); // ACK if on
                 } else {
                     uartTxWord((uint16_t) 0x15); // NAK if off
+                }
                 break;
 
             // All switches off
@@ -361,7 +368,7 @@ void sendTemps(void) {
     uint8_t i;
 
     // Convert analog values and send
-    for (i = 0; i <= 3; i++) {
+    for (i = 0; i <= 2; i++) {
         temp = adcFormatTemp(AnalogValues[i+5]);
         uartTxWord(temp);
     }
