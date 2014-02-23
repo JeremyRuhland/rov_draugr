@@ -1,9 +1,9 @@
 # AVR-GCC Makefile
 #---Prefs---
 PROJECT=ROV_waterside
-MMCU=atmega328
-F_CPU=16000000 # 16 MHz
-FUSEBITS=0x62
+MMCU=atmega328p
+F_CPU=8000000 # 16 MHz
+#FUSEBITS=0x62
 #-----------
 
 
@@ -23,11 +23,11 @@ $(PROJECT).hex: $(PROJECT).elf
 $(PROJECT).elf: $(SOURCES)
 	$(CC) $(CFLAGS) -o $(PROJECT).elf $(SOURCES)
 
-program: $(PROJECT).hex
+program-isp: $(PROJECT).hex
 	avrdude $(AVRDUDEFLAGS) -c usbtiny -e -U flash:w:$(PROJECT).hex
 
-program-serial: $(PROJECT).hex
-	avrdude $(AVRDUDEFLAGS) -C arduino -P /dev/ttyUSB0 -b 19200 -D -U flash:w:$(PROJECT).hex:i
+program: $(PROJECT).hex
+	avrdude $(AVRDUDEFLAGS) -c stk500v1 -P /dev/ttyUSB0 -b 19200 -D -U flash:w:$(PROJECT).hex:i
 
 burn-fuse:
 	avrdude $(AVRDUDEFLAGS) -u -U lfuse:w:$(FUSEBITS):m

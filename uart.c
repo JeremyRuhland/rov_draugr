@@ -35,3 +35,14 @@ void uartTxWord(uint16_t word) {
     uartTxByte((uint8_t) (word>>8));
     uartTxByte((uint8_t) word);
 }
+
+#ifdef TEXT_DEBUG
+void uartTxStrg(uint8_t *strg) {
+    uint8_t *i = strg;
+    
+    for (; *i; i++) {
+        while(!(UCSR0A & (1<<UDRE0))) {} // Wail for buffer empty
+        uartTxByte(*i);
+    }
+}
+#endif

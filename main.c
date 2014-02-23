@@ -60,7 +60,7 @@ void runCommand(void) {
         // Parse and execute received commands
         switch (oldCommand) {
             // Motor 0, stop
-            case ' ' :
+            case CASE_MOTOR_0_STOP :
                 ShiftOut.bit.motor0 = OFF;
                 updateShift();
 
@@ -68,7 +68,7 @@ void runCommand(void) {
                 break;
 
             // Motor 0, forward
-            case '!' :
+            case CASE_MOTOR_0_FORWARD :
               #ifdef MOTOR0_REVERSE
                 ShiftOut.bit.motor0 = BACKWARD;
               #else
@@ -80,7 +80,7 @@ void runCommand(void) {
                 break;
 
             // Motor 0, backward
-            case '"' :
+            case CASE_MOTOR_0_BACKWARD :
               #ifdef MOTOR0_REVERSE
                 ShiftOut.bit.motor0 = FORWARD;
               #else
@@ -92,7 +92,7 @@ void runCommand(void) {
                 break;
 
             // Motor 1, stop
-            case '#' :
+            case CASE_MOTOR_1_STOP :
                 ShiftOut.bit.motor1 = OFF;
                 updateShift();
 
@@ -100,7 +100,7 @@ void runCommand(void) {
                 break;
 
             // Motor 1, forward
-            case '$' :
+            case CASE_MOTOR_1_FORWARD :
               #ifdef MOTOR1_REVERSE
                 ShiftOut.bit.motor1 = BACKWARD;
               #else
@@ -112,7 +112,7 @@ void runCommand(void) {
                 break;
 
             // Motor 1, backward
-            case '%' :
+            case CASE_MOTOR_1_BACKWARD :
               #ifdef MOTOR1_REVERSE
                 ShiftOut.bit.motor1 = FORWARD;
               #else
@@ -124,7 +124,7 @@ void runCommand(void) {
                 break;
 
             // Motor 2, stop
-            case '&' :
+            case CASE_MOTOR_2_STOP :
                 ShiftOut.bit.motor2 = OFF;
                 updateShift();
 
@@ -132,7 +132,7 @@ void runCommand(void) {
                 break;
 
             // Motor 2, forward
-            case '\'' :
+            case CASE_MOTOR_2_FORWARD :
               #ifdef MOTOR2_REVERSE
                 ShiftOut.bit.motor2 = BACKWARD;
               #else
@@ -144,7 +144,7 @@ void runCommand(void) {
                 break;
 
             // Motor 2, backward
-            case '(':
+            case CASE_MOTOR_2_BACKWARD :
               #ifdef MOTOR2_REVERSE
                 ShiftOut.bit.motor2 = FORWARD;
               #else
@@ -156,7 +156,7 @@ void runCommand(void) {
                 break;
 
             // Motor 3, stop
-            case ')' :
+            case CASE_MOTOR_3_STOP :
                 ShiftOut.bit.motor3 = OFF;
                 updateShift();
 
@@ -164,7 +164,7 @@ void runCommand(void) {
                 break;
 
             // Motor 3, forward
-            case '*' :
+            case CASE_MOTOR_3_FORWARD :
               #ifdef MOTOR3_REVERSE
                 ShiftOut.bit.motor3 = BACKWARD;
               #else
@@ -176,7 +176,7 @@ void runCommand(void) {
                 break;
 
             // Motor 3, backward
-            case '+' :
+            case CASE_MOTOR_3_BACKWARD :
               #ifdef MOTOR3_REVERSE
                 ShiftOut.bit.motor3 = FORWARD;
               #else
@@ -188,7 +188,7 @@ void runCommand(void) {
                 break;
 
             // Motor 4, stop
-            case ',' :
+            case CASE_MOTOR_4_STOP :
                 ShiftOut.bit.motor4 = OFF;
                 updateShift();
 
@@ -196,7 +196,7 @@ void runCommand(void) {
                 break;
 
             // Motor 4, forward
-            case '-' :
+            case CASE_MOTOR_4_FORWARD :
               #ifdef MOTOR4_REVERSE
                 ShiftOut.bit.motor4 = BACKWARD;
               #else
@@ -208,7 +208,7 @@ void runCommand(void) {
                 break;
 
             // Motor 4, backward
-            case '.' :
+            case CASE_MOTOR_4_BACKWARD :
               #ifdef MOTOR4_REVERSE
                 ShiftOut.bit.motor4 = FORWARD;
               #else
@@ -220,7 +220,7 @@ void runCommand(void) {
                 break;
 
             // All motors stop
-            case '/' :
+            case CASE_ALL_MOTORS_STOP :
                 ShiftOut.bit.motor0 = OFF;
                 ShiftOut.bit.motor1 = OFF;
                 ShiftOut.bit.motor2 = OFF;
@@ -233,7 +233,7 @@ void runCommand(void) {
                 break;
 
             // Toggle SW 0
-            case '0' :
+            case CASE_TOGGLE_SW_0 :
                 ShiftOut.bit.switch0 = !(ShiftOut.bit.switch0);
 
                 updateShift();
@@ -246,7 +246,7 @@ void runCommand(void) {
                 break;
 
             // Toggle SW 1
-            case '1' :
+            case CASE_TOGGLE_SW_1 :
                 ShiftOut.bit.switch1 = !(ShiftOut.bit.switch1);
 
                 updateShift();
@@ -259,7 +259,7 @@ void runCommand(void) {
                 break;
 
             // Toggle SW 2
-            case '2' :
+            case CASE_TOGGLE_SW_2 :
                 ShiftOut.bit.switch2 = !(ShiftOut.bit.switch2);
 
                 updateShift();
@@ -272,7 +272,7 @@ void runCommand(void) {
                 break;
 
             // Toggle SW 3
-            case '3' :
+            case CASE_TOGGLE_SW_3 :
                 ShiftOut.bit.switch3 = !(ShiftOut.bit.switch3);
 
                 updateShift();
@@ -285,7 +285,7 @@ void runCommand(void) {
                 break;
 
             // Toggle SW 4
-            case '4' :
+            case CASE_TOGGLE_SW_4 :
                 ShiftOut.bit.switch4 = !(ShiftOut.bit.switch4);
 
                 updateShift();
@@ -298,7 +298,7 @@ void runCommand(void) {
                 break;
 
             // Toggle SW 5
-            case '5' :
+            case CASE_TOGGLE_SW_5 :
                 ShiftOut.bit.switch5 = !(ShiftOut.bit.switch5);
 
                 updateShift();
@@ -311,7 +311,7 @@ void runCommand(void) {
                 break;
 
             // All switches off
-            case '6' :
+            case CASE_ALL_SWITCHES_OFF :
                 ShiftOut.bit.switch0 = OFF;
                 ShiftOut.bit.switch1 = OFF;
                 ShiftOut.bit.switch2 = OFF;
@@ -325,38 +325,127 @@ void runCommand(void) {
                 break;
 
             // Get all motor status
-            case '7' :
+            case CASE_MOTOR_STATUS :
                 sendMotorStatus();
                 break;
 
             // Get all temps
-            case '8' :
+            case CASE_TEMPS :
                 sendTemps();
                 break;
 
             // Get all motor currents
-            case '9' :
+            case CASE_CURRENTS :
                 sendCurrents();
                 break;
 
             // Get water conductivity measurement
-            case ':' :
+            case CASE_CONDUCTIVITY :
 
                 break;
 
             // Get sonar distance measurement
-            case ';' :
+            case CASE_SONAR_DISTANCE :
 
                 break;
 
             // Get compass heading
-            case '<' :
+            case CASE_COMPASS :
 
                 break;
 
             default:
                 break;
         }
+
+       #ifdef TEXT_DEBUG
+        // Debug routine to print human readable state information
+        switch (oldCommand) {
+            // Motor 0, stop
+            case CASE_MOTOR_0_STOP :
+                uartTxStrg("\n\rMotor 0 Stop");
+                break;
+
+            // Motor 0, forward
+            case CASE_MOTOR_0_FORWARD :
+                uartTxStrg("\n\rMotor 0 Forward");
+                break;
+
+            // Motor 0, backward
+            case CASE_MOTOR_0_BACKWARD :
+                uartTxStrg("\n\rMotor 0 Backward");
+                break;
+
+            // Motor 1, stop
+            case CASE_MOTOR_1_STOP :
+                uartTxStrg("\n\rMotor 1 Stop");
+                break;
+
+            // Motor 1, forward
+            case CASE_MOTOR_1_FORWARD :
+                uartTxStrg("\n\rMotor 1 Forward");
+                break;
+
+            // Motor 1, backward
+            case CASE_MOTOR_1_BACKWARD :
+                uartTxStrg("\n\rMotor 1 Backward");
+                break;
+
+            // Motor 2, stop
+            case CASE_MOTOR_2_STOP :
+                uartTxStrg("\n\rMotor 2 Stop");
+                break;
+
+            // Motor 2, forward
+            case CASE_MOTOR_2_FORWARD :
+                uartTxStrg("\n\rMotor 2 Forward");
+                break;
+
+            // Motor 2, backward
+            case CASE_MOTOR_2_BACKWARD:
+                uartTxStrg("\n\rMotor 2 Backward");
+                break;
+
+            // Motor 3, stop
+            case CASE_MOTOR_3_STOP :
+                uartTxStrg("\n\rMotor 3 Stop");
+                break;
+
+            // Motor 3, forward
+            case CASE_MOTOR_3_FORWARD :
+                uartTxStrg("\n\rMotor 3 Forward");
+                break;
+
+            // Motor 3, backward
+            case CASE_MOTOR_3_BACKWARD :
+                uartTxStrg("\n\rMotor 3 Backward");
+                break;
+
+            // Motor 4, stop
+            case CASE_MOTOR_4_STOP :
+                uartTxStrg("\n\rMotor 4 Stop");
+                break;
+
+            // Motor 4, forward
+            case CASE_MOTOR_4_FORWARD :
+                uartTxStrg("\n\rMotor 4 Forward");
+                break;
+
+            // Motor 4, backward
+            case CASE_MOTOR_4_BACKWARD :
+                uartTxStrg("\n\rMotor 4 Backward");
+                break;
+
+            // All motors stop
+            case CASE_ALL_MOTORS_STOP :
+                uartTxStrg("\n\rAll Motors Stop");
+                break;
+
+            default:
+                uartTxStrg("\n\rUnknown Command");
+                break;
+        }
+       #endif
     }
 }
 
