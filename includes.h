@@ -7,6 +7,8 @@
 * bitfield order reverse mode.                                                 *
 * Uncommenting text debug mode will cause the ROV to print serial strings      *
 * describing its current state.                                                *
+* Uncommenting the dead recon demo will automatically comment out all normal   *
+* code and run a predefined demo program.                                      *
 *                                                                              *
 *******************************************************************************/
 
@@ -18,7 +20,9 @@
 
 // #define BITFIELD_ORDER_REVERSE
 
-#define TEXT_DEBUG
+//#define TEXT_DEBUG
+
+#define DEAD_RECON_DEMO
 
 /*****************************************************************************/
 
@@ -31,7 +35,7 @@
 #include "adc.h"
 
 #define FORWARD  0x01
-#define BACKWARD 0x03
+#define BACKWARD 0x02
 #define ON       0x01
 #define OFF      0x00
 #define TRUE     0x01

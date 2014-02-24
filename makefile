@@ -24,7 +24,7 @@ $(PROJECT).elf: $(SOURCES)
 	$(CC) $(CFLAGS) -o $(PROJECT).elf $(SOURCES)
 
 program-isp: $(PROJECT).hex
-	avrdude $(AVRDUDEFLAGS) -c usbtiny -e -U flash:w:$(PROJECT).hex
+	avrdude $(AVRDUDEFLAGS) -c usbtiny -F -e -U flash:w:$(PROJECT).hex
 
 program: $(PROJECT).hex
 	avrdude $(AVRDUDEFLAGS) -c stk500v1 -P /dev/ttyUSB0 -b 19200 -D -U flash:w:$(PROJECT).hex:i

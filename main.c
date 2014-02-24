@@ -16,6 +16,10 @@ void sendTemps(void);
 void sendCurrents(void);
 void sendMotorStatus(void);
 
+#ifdef DEAD_RECON_DEMO
+void deadReconDemo(void);
+#endif
+
 // Global variables
 volatile uint8_t ReceivedCommand; // Buffer for received command
 volatile ShiftRegister16Bit ShiftOut; // Buffer for shift register
@@ -24,17 +28,26 @@ volatile uint16_t AnalogValues[8]; // Buffer for ADC results
 int main(void) {
     // Initialize all functions
     initGpio();
-    uartInit();
+
     spiInit();
+    updateShift(); // Zero shift registers
+
+    uartInit();
     adcInit();
 
     sei();
+
+    #ifdef DEAD_RECON_DEMO
+    deadReconDemo();
+    for (;;) {}
+    #else
 
     // Main control loop
     for(;;) {
         ReceivedCommand = uartRx(); // Check buffer for waiting command
         runCommand(); // Parse and run command
     }
+    #endif
 }
 
 void initGpio(void) {
@@ -534,3 +547,87 @@ ISR(ADC_vect) {
         ADCSRA |= (1<<ADSC);
     }
 }
+
+#ifdef DEAD_RECON_DEMO
+void deadReconDemo(void) {
+    // Wait 6 sec
+    _delay_ms(600);
+
+    // Forward 6 sec total
+    ShiftOut.bit.motor0 = FORWARD;
+    ShiftOut.bit.motor1 = FORWARD;
+    updateShift();
+
+    _delay_ms(400);
+
+    // Submurge
+    ShiftOut.bit.motor2 = BACKWARD;
+    ShiftOut.bit.motor3 = BACKWARD;
+    updateShift();
+
+    _delay_ms(200);
+
+    // Wait 2 sec
+    ShiftOut.bit.motor0 = OFF;
+    ShiftOut.bit.motor1 = OFF;
+    ShiftOut.bit.motor2 = OFF;
+    ShiftOut.bit.motor3 = OFF;
+    updateShift();
+
+    _delay_ms(200);
+
+    // Sideways 4 sec
+    ShiftOut.bit.motor4 = FORWARD;
+    updateShift();
+
+    _delay_ms(400);
+
+    // Wait 2 sec
+    ShiftOut.bit.motor4 = OFF;
+    updateShift();
+
+    _delay_ms(200);
+
+    // Forward 4 sec
+    ShiftOut.bit.motor0 = FORWARD;
+    ShiftOut.bit.motor1 = FORWARD;
+    updateShift();
+
+    _delay_ms(400);
+
+    // Rotate 4 sec
+
+    ShiftOut.bit.motor1 = BACKWARD;
+    updateShift();
+
+    _delay_ms(400);
+
+    // Forward 10 sec total
+    ShiftOut.bit.motor1 = FORWARD;
+    updateShift();
+
+    _delay_ms(400);
+
+    // Surface
+    ShiftOut.bit.motor2 = FORWARD;
+    ShiftOut.bit.motor3 = FORWARD;
+    updateShift();
+
+    _delay_ms(200);
+
+    ShiftOut.bit.motor2 = OFF;
+    ShiftOut.bit.motor3 = OFF;
+    updateShift();
+
+    _delay_ms(400);
+
+    // Turn off all motors
+    ShiftOut.bit.motor0 = OFF;
+    ShiftOut.bit.motor1 = OFF;
+    ShiftOut.bit.motor2 = OFF;
+    ShiftOut.bit.motor3 = OFF;
+    ShiftOut.bit.motor4 = OFF;
+    
+    updateShift();
+}
+#endif

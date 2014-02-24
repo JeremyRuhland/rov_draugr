@@ -17,8 +17,8 @@
 *                                                                             *
 ******************************************************************************/
 
-#define UART_BAUD 9600
-#define UART_BAUD_CODE ((uint16_t) ((F_CPU/(16UL*UART_BAUD))-1))
+#define UART_BAUD 4800
+#define UART_BAUD_CODE ((uint16_t) ((F_CPU/16/UART_BAUD)-1))
 
 extern void uartInit(void);
 extern uint8_t uartRx(void);
@@ -26,5 +26,5 @@ extern void uartTxByte(uint8_t byte);
 extern void uartTxWord(uint16_t word);
 
 #ifdef TEXT_DEBUG
-extern void uartTxStrg(uint8_t *strg);
+extern void uartTxStrg(char *strg);
 #endif

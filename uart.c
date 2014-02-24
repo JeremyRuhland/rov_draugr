@@ -37,8 +37,8 @@ void uartTxWord(uint16_t word) {
 }
 
 #ifdef TEXT_DEBUG
-void uartTxStrg(uint8_t *strg) {
-    uint8_t *i = strg;
+void uartTxStrg(char *strg) {
+    char *i = strg;
     
     for (; *i; i++) {
         while(!(UCSR0A & (1<<UDRE0))) {} // Wail for buffer empty
