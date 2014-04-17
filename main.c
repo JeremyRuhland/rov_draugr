@@ -35,7 +35,7 @@ int main(void) {
     uartInit();
     adcInit();
 
-    sei();
+    //sei();
 
     #ifdef DEAD_RECON_DEMO
     deadReconDemo();
@@ -58,8 +58,8 @@ void initGpio(void) {
     PORTC |= (1<<PC5);
     DDRC |= (1<<PC5);
 
-    PORTB |= ((1<<PB0) | (1<<PB1));
-    DDRB |= ((1<<PB0) | (1<<PB1) | (1<<PB2) | (1<<PB3) | (1<<PB5));
+    PORTB |= ((0<<PB0) | (1<<PB1)); // Set PB0 back to output after testing
+    DDRB |= ((0<<PB0) | (1<<PB1) | (1<<PB2) | (1<<PB3) | (1<<PB5)); // Set PB0 back to output after testing
 }
 
 void runCommand(void) {
@@ -550,6 +550,58 @@ ISR(ADC_vect) {
 
 #ifdef DEAD_RECON_DEMO
 void deadReconDemo(void) {
+#if 1
+    // This is spi output code to test speeds
+    uint8_t i = 0;
+
+    for (;;) {
+        //_delay_ms(1);
+        spiPeripheralSelect(4);
+        _delay_us(20);
+        spiByte(i);
+        spiPeripheralSelect(0);
+        i++;
+        //_delay_us(200);
+    }
+#endif
+#if 0
+    // This is motor test code to verify things run properly
+    _delay_ms(400);
+    ShiftOut.bit.motor0 = FORWARD;
+
+    updateShift();
+
+    _delay_ms(400);
+    ShiftOut.bit.motor0 = OFF;
+    ShiftOut.bit.motor1 = FORWARD;
+    updateShift();
+
+    _delay_ms(400);
+    ShiftOut.bit.motor1 = OFF;
+    ShiftOut.bit.motor2 = FORWARD;
+    updateShift();
+
+    _delay_ms(400);
+    ShiftOut.bit.motor2 = OFF;
+    ShiftOut.bit.motor3 = FORWARD;
+    updateShift();
+
+    _delay_ms(400);
+    ShiftOut.bit.motor3 = OFF;
+    ShiftOut.bit.motor4 = FORWARD;
+    updateShift();
+
+    _delay_ms(400);
+    // Turn off all motors
+    ShiftOut.bit.motor0 = OFF;
+    ShiftOut.bit.motor1 = OFF;
+    ShiftOut.bit.motor2 = OFF;
+    ShiftOut.bit.motor3 = OFF;
+    ShiftOut.bit.motor4 = OFF;
+    updateShift();
+#endif
+#if 0
+    // This is the dead reconning diving demo for the pool
     // Wait 6 sec
     _delay_ms(600);
 
@@ -629,5 +681,6 @@ void deadReconDemo(void) {
     ShiftOut.bit.motor4 = OFF;
     
     updateShift();
+#endif
 }
 #endif

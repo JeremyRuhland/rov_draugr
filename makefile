@@ -3,7 +3,10 @@
 PROJECT=ROV_waterside
 MMCU=atmega328p
 F_CPU=8000000 # 16 MHz
-#FUSEBITS=0x62
+
+LFUSEBITS=0xE2
+HFUSEBITS=0xDE
+EFUSEBITS=0xFD
 #-----------
 
 
@@ -30,7 +33,7 @@ program: $(PROJECT).hex
 	avrdude $(AVRDUDEFLAGS) -c stk500v1 -P /dev/ttyUSB0 -b 19200 -D -U flash:w:$(PROJECT).hex:i
 
 burn-fuse:
-	avrdude $(AVRDUDEFLAGS) -u -U lfuse:w:$(FUSEBITS):m
+	avrdude $(AVRDUDEFLAGS) -c usbtiny -F -u -U lfuse:w:$(LFUSEBITS):m -U hfuse:w:$(HFUSEBITS):m -U efuse:w:$(EFUSEBITS):m
 
 # Display size of file.
 filesize:
