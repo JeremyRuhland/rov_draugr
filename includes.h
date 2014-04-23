@@ -20,9 +20,9 @@
 
 // #define BITFIELD_ORDER_REVERSE
 
-//#define TEXT_DEBUG
+// #define TEXT_DEBUG
 
-#define DEAD_RECON_DEMO
+// #define DEAD_RECON_DEMO
 
 /*****************************************************************************/
 
@@ -33,6 +33,9 @@
 #include "spi.h"
 #include "uart.h"
 #include "adc.h"
+
+#define ACK      'y'
+#define NAK      'n'
 
 #define FORWARD  0x01
 #define BACKWARD 0x02
