@@ -27,13 +27,13 @@ $(PROJECT).elf: $(SOURCES)
 	$(CC) $(CFLAGS) -o $(PROJECT).elf $(SOURCES)
 
 program-isp: $(PROJECT).hex
-	avrdude $(AVRDUDEFLAGS) -c usbtiny -F -e -U flash:w:$(PROJECT).hex
+	avrdude $(AVRDUDEFLAGS) -c usbasp -F -e -U flash:w:$(PROJECT).hex
 
 program: $(PROJECT).hex
 	avrdude $(AVRDUDEFLAGS) -c stk500v1 -P /dev/ttyUSB0 -b 19200 -D -U flash:w:$(PROJECT).hex:i
 
 burn-fuse:
-	avrdude $(AVRDUDEFLAGS) -c usbtiny -F -u -U lfuse:w:$(LFUSEBITS):m -U hfuse:w:$(HFUSEBITS):m -U efuse:w:$(EFUSEBITS):m
+	avrdude $(AVRDUDEFLAGS) -c usbasp -F -u -U lfuse:w:$(LFUSEBITS):m -U hfuse:w:$(HFUSEBITS):m -U efuse:w:$(EFUSEBITS):m
 
 # Display size of file.
 filesize:
