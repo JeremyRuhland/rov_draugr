@@ -26,5 +26,5 @@ extern void uartTxByte(uint8_t byte);
 extern void uartTxWord(uint16_t word);
 
 #ifdef TEXT_DEBUG
-extern void uartTxStrg(char *strg);
+extern void uartTxStrg(char strg[]);
 #endif

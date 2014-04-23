@@ -1,6 +1,9 @@
 #include "includes.h"
 
 void uartInit(void) {
+    // Flush buffer
+    UDR0 = 0x00;
+
     // Set baudrate
     UBRR0H = (uint8_t) (UART_BAUD_CODE>>8);
     UBRR0L = (uint8_t) (UART_BAUD_CODE);
@@ -23,9 +26,8 @@ uint8_t uartRx(void) {
 }
 
 void uartTxByte(uint8_t byte) {
-    if (UCSR0A & (1<<UDRE0)) { // If buffer empty
-        UDR0 = byte;
-    } else {}
+    while(!(UCSR0A & (1<<UDRE0))) {} // Wail for buffer empty
+    UDR0 = byte;
 }
 
 void uartTxWord(uint16_t word) {
@@ -37,12 +39,11 @@ void uartTxWord(uint16_t word) {
 }
 
 #ifdef TEXT_DEBUG
-void uartTxStrg(char *strg) {
-    char *i = strg;
-    
-    for (; *i; i++) {
-        while(!(UCSR0A & (1<<UDRE0))) {} // Wail for buffer empty
-        uartTxByte(*i);
+void uartTxStrg(char strg[]) {
+    uint8_t i = 0;
+
+    for (; strg[i] != 0x00; i++) {
+        uartTxByte((uint8_t) strg[i]);
     }
 }
 #endif
