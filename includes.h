@@ -24,6 +24,8 @@
 
 // #define DEAD_RECON_DEMO
 
+// #define DIRECTIONAL_CONTROLLS
+
 /*****************************************************************************/
 
 #include <avr/io.h>
@@ -43,6 +45,20 @@
 #define OFF      0x00
 #define TRUE     0x01
 #define FALSE    0x00
+
+#ifdef DIRECTIONAL_CONTROLLS
+
+#define CASE_FORWARD          (uint8_t) 'w'
+#define CASE_BACKWARD         (uint8_t) 's'
+#define CASE_LEFT             (uint8_t) 'a'
+#define CASE_RIGHT            (uint8_t) 'd'
+#define CASE_UP               (uint8_t) 'u'
+#define CASE_DOWN             (uint8_t) 'j'
+#define CASE_CLOCKWISE        (uint8_t) 'e'
+#define CASE_ANTICLOCKWISE    (uint8_t) 'q'
+#define CASE_ALL_STOP         (uint8_t) ' '
+
+#else
 
 #define CASE_MOTOR_0_STOP     (uint8_t) '`'
 #define CASE_MOTOR_0_FORWARD  (uint8_t) '1'
@@ -73,6 +89,8 @@
 #define CASE_CONDUCTIVITY     (uint8_t) 'a'
 #define CASE_SONAR_DISTANCE   (uint8_t) 's'
 #define CASE_COMPASS          (uint8_t) 'd'
+
+#endif
 
 #ifdef BITFIELD_ORDER_REVERSE
 typedef struct {
