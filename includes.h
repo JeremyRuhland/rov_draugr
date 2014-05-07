@@ -12,11 +12,11 @@
 *                                                                              *
 *******************************************************************************/
 
-// #define MOTOR0_REVERSE
-// #define MOTOR1_REVERSE
+#define MOTOR0_REVERSE
+#define MOTOR1_REVERSE
 // #define MOTOR2_REVERSE
 // #define MOTOR3_REVERSE
-// #define MOTOR4_REVERSE
+#define MOTOR4_REVERSE
 
 // #define BITFIELD_ORDER_REVERSE
 
@@ -24,7 +24,7 @@
 
 // #define DEAD_RECON_DEMO
 
-// #define DIRECTIONAL_CONTROLLS
+#define DIRECTIONAL_CONTROLLS
 
 /*****************************************************************************/
 

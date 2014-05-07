@@ -15,6 +15,7 @@ void updateShift(void);
 void sendTemps(void);
 void sendCurrents(void);
 void sendMotorStatus(void);
+void allStop(void);
 
 #ifdef DEAD_RECON_DEMO
 void deadReconDemo(void);
@@ -95,7 +96,7 @@ void runCommand(void) {
                 break;
 
             // Backward
-            case CASE_BACKWARDS :
+            case CASE_BACKWARD :
                 allStop();
 
               #ifdef MOTOR0_REVERSE
